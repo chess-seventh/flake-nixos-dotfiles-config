@@ -1,0 +1,8 @@
+{ ... }:
+
+{
+  programs.joshuto = {
+    enable = true;
+  };
+}
+

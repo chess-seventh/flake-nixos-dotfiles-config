@@ -7,7 +7,7 @@
   inherit (colorscheme) palette;
 in {
   programs.wlogout = {
-    enable = false;
+    enable = true;
     style =
       /*
       css

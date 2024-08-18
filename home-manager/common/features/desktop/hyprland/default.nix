@@ -39,20 +39,21 @@
     settings = {
       # monitor = "";
       # monitor=",preferred,auto,1.0";
-      # monitor=DP-1,preferred,2048x0,1
+      monitor="eDP-1,preferred,auto,1.0";
       # See https://wiki.hyprland.org/Configuring/Keywords/ for more
 
       # Execute your favorite apps at launch
-      # exec-once = "pypr & hyprpaper & waybar & waypaper --restore --backend swaybg & ferdium & obsidian & firefox & spotify";
-      # exec-once = "pypr & hyprpaper & waybar";
+      # exec-once = "pypr & hyprpaper & waypaper --restore --backend swaybg & ferdium & obsidian & firefox & spotify";
+      exec-once = "pypr & hyprpaper & ferdium & firefox & spotify";
+      # exec-once = "pypr & hyprpaper";
 
       # Source a file (multi-file configs)
       source = "$HOME/.config/hypr/macchiato.conf";
 
-      debug = {
-        enable_stdout_logs = true;
-        disable_logs = false;
-      };
+      # debug = {
+      #   enable_stdout_logs = true;
+      #   disable_logs = false;
+      # };
 
       # For all categories, see https://wiki.hyprland.org/Configuring/Variables/
       input = {
@@ -78,16 +79,16 @@
         force_zero_scaling = true;
       };
 
-      # env = [
-      #   # "GDK_SCALE,1.6"
-      #   "HYPRCURSOR_THEME,Catppuccin-Macchiato-Teal"
-      #   "HYPRCURSOR_SIZE,22"
-      #   "XCURSOR_THEME,Catppuccin-Macchiato-Teal"
-      #   "GDK_SCALE,1"
-      #   "XCURSOR_SIZE,22"
-      #   "WLR_NO_HARDWARE_CURSORS,1"
-      #   "WLR_RENDERER_ALLOW_SOFTWARE,1"
-      # ];
+      env = [
+        # "GDK_SCALE,1.6"
+        "HYPRCURSOR_THEME,Catppuccin-Macchiato-Teal"
+        "HYPRCURSOR_SIZE,22"
+        "XCURSOR_THEME,Catppuccin-Macchiato-Teal"
+        "GDK_SCALE,1"
+        "XCURSOR_SIZE,22"
+        "WLR_NO_HARDWARE_CURSORS,1"
+        "WLR_RENDERER_ALLOW_SOFTWARE,1"
+      ];
 
       general = {
         # See https://wiki.hyprland.org/Configuring/Variables/ for more
@@ -123,7 +124,7 @@
         fullscreen_opacity = 0.87;
       };
 
-      # layerrule = blur, waybar
+      layerrule = "blur, waybar";
 
       animations = {
         enabled = "yes";

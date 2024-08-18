@@ -23,7 +23,7 @@ pkgs,
       # BACKGROUND
       background = {
         monitor = "";
-        path = "$HOME/background";
+        path = "$HOME/Pictures";
         blur_passes = 2;
         color = "$base";
       };
@@ -96,11 +96,13 @@ pkgs,
           inner_color = "$surface0";
           font_color = "$text";
           fade_on_empty = false;
-          placeholder_text = "<span foreground=\"##$textAlpha\"><i>󰌾 Logged in as </i><span foreground=\"##$accentAlpha\">$USER</span></span>";
+          # placeholder_text = "<span foreground=\"##$textAlpha\"><i>󰌾 Logged in as </i><span foreground=\"##$accentAlpha\">$USER</span></span>";
+          placeholder_text = "󰌾 Logged in as $USER";
           hide_input = false;
           check_color = "$accent";
           fail_color = "$red";
-          fail_text = "<i>$FAIL <b>($ATTEMPTS)</b></i>";
+          fail_text = "$FAIL (attemps: $ATTEMPTS)";
+          # fail_text = "<i>$FAIL <b>($ATTEMPTS)</b></i>";
           capslock_color = "$yellow";
           position = "0, -185";
           halign = "center";

@@ -193,6 +193,7 @@
     swaybg
     tmate
     waypaper
+    wdisplays
     wl-clipboard
 
     # web & goodies

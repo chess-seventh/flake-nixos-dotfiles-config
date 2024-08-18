@@ -10,7 +10,7 @@ config,
   hyprctl = lib.getExe' config.wayland.windowManager.hyprland.package "hyprctl";
 in {
   services.hypridle = {
-    enable = false;
+    enable = true;
     package = pkgs.unstable.hypridle;
     settings = {
       general = {

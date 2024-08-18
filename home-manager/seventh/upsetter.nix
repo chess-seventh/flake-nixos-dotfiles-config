@@ -42,6 +42,8 @@
     ".config/hypr/macchiato.conf".source = "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/hypr/macchiato.conf";
     ".config/avizo/config.ini".source = "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/avizo/config.ini";
 
+    ".config/hypr/pyprland.toml".source = "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/hypr/pyprland.toml";
+
     ".config/lazygit/config.yml".source = "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/lazygit/config.yml";
 
     ".config/qutebrowser/autoconfig.yml".source = "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/qutebrowser/autoconfig.yml";
@@ -90,6 +92,7 @@
     fish
     openssl
     pamixer
+    pass
     pavucontrol
     pinentry
     pkg-config
@@ -189,8 +192,6 @@
     sway
     swaybg
     tmate
-    # vimPlugins.nvim-treesitter
-    # waybar
     waypaper
     wl-clipboard
 
@@ -236,7 +237,6 @@
     #
     hyprcursor
     hypridle
-    # hyprlock
     hyprpicker
     imv
     mpv
@@ -311,17 +311,10 @@
     gnumake
     k9s
     slack
+
+    gnupg
   ];
 
-  # wayland.windowManager.hyprland.settings.env = [
-  #   # "WLR_DRM_DEVICES,/home/${config.home.username}/.config/hypr/card"
-  #   # "AQ_DRM_DEVICES,/home/${config.home.username}/.config/hypr/card"
-  #   # "AQ_DRM_DEVICES,/dev/dri/card1"
-  #   # "AQ_TRACE,1"
-  #   # "HYPLAND_TRACE,1"
-  #   # "XDG_SESSION_TYPE,wayland"
-  #   # "MOZ_ENABLE_WAYLAND,1"
-  # ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "23.05";

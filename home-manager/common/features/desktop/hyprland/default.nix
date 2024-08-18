@@ -45,7 +45,6 @@
       # Execute your favorite apps at launch
       # exec-once = "pypr & hyprpaper & waypaper --restore --backend swaybg & ferdium & obsidian & firefox & spotify";
       exec-once = "pypr & hyprpaper & ferdium & firefox & spotify";
-      # exec-once = "pypr & hyprpaper";
 
       # Source a file (multi-file configs)
       source = "$HOME/.config/hypr/macchiato.conf";
@@ -326,10 +325,10 @@
         "$mainMod, mouse_down, workspace, e+1"
         "$mainMod, mouse_up, workspace, e-1"
         "$mainMod SHIFT, E, movewindow, mon:eDP-1"
-        "$mainMod SHIFT, W, movewindow, mon:DP-1"
+        "$mainMod SHIFT, W, movewindow, mon:DP-6"
 
         "$mainMod, E, focusmonitor, eDP-1"
-        "$mainMod, W, focusmonitor, DP-1"
+        "$mainMod, W, focusmonitor, DP-6"
       ];
 
       "$dropterm"  = "^(main_dropterm)$";

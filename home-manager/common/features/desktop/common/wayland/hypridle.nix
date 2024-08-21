@@ -10,7 +10,7 @@ config,
   hyprctl = lib.getExe' config.wayland.windowManager.hyprland.package "hyprctl";
 in {
   services.hypridle = {
-    enable = true;
+    enable = false;
     package = pkgs.unstable.hypridle;
     settings = {
       general = {
@@ -21,27 +21,27 @@ in {
 
       listener = [
         {
-          timeout = 180;                                # 3min.
+          timeout = 1800;                                # 30min.
           on-timeout = "brightnessctl -s set 15%";        # set monitor backlight to minimum, avoid 0 on OLED monitor.
           on-resume = "brightnessctl -r";                 # monitor backlight restore.
         }
         {
           # turn off keyboard backlight, comment out this section if you dont have a keyboard backlight.
-          timeout = 180;                                                # 3min.
+          timeout = 1800;                                                # 30min.
           on-timeout = "brightnessctl -sd platform::kbd_backlight set 0"; # turn off keyboard backlight.
           on-resume = "brightnessctl -rd platform::kbd_backlight";        # turn on keyboard backlight.
         }
         {
-          timeout = 300;                                 # 5min
+          timeout = 3000;                                 # 50min
           on-timeout = "${loginctl} lock-session";            # lock screen when timeout has passed
         }
         {
-          timeout = 350;                                 # 5.83min
+          timeout = 3500;                                 # 583min
           on-timeout = "${hyprctl} dispatch dpms off";        # screen off when timeout has passed
           on-resume = "${hyprctl} dispatch dpms on";          # screen on when activity is detected after timeout has fired.
         }
         {
-          timeout = 420;                                 # 7min
+          timeout = 4200;                                 # 70min
           on-timeout = "${systemctl} suspend";                # suspend pc
         }
       ];

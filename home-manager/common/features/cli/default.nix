@@ -13,7 +13,6 @@
     ./jq.nix
     ./mcfly.nix
     ./pnpm.nix
-    ./shellcolor.nix
     ./ssh.nix
     ./starship.nix
     ./tmux.nix

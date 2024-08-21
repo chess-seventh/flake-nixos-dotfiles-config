@@ -195,12 +195,14 @@
     waypaper
     wdisplays
     wl-clipboard
+    gnome.gnome-keyring
 
     # web & goodies
     #
     firefox
     chromium
     protonmail-bridge
+    protonvpn-gui
 
     # dev tools
     #
@@ -313,7 +315,6 @@
     k9s
     slack
 
-    gnupg
   ];
 
 

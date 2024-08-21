@@ -3,5 +3,5 @@
 {
   # List your module files here
   fonts = import ./fonts.nix;
-  shellcolor = import ./shellcolor.nix;
+  # shellcolor = import ./shellcolor.nix;
 }

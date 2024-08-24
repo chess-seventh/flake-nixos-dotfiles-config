@@ -1,10 +1,10 @@
 {
-  inputs,
-  lib,
-  pkgs,
-  config,
-  outputs,
-  ...
+inputs,
+lib,
+pkgs,
+config,
+outputs,
+...
 }: {
   imports =
     [
@@ -33,8 +33,6 @@
     };
   };
 
-  # systemd.user.startServices = "sd-switch";
-
   home = {
     homeDirectory = lib.mkDefault "/home/${config.home.username}";
     stateVersion = "23.05";
@@ -47,5 +45,7 @@
   programs = {
     home-manager.enable = true;
     git.enable = true;
+    gpg.enable = false;
   };
+
 }

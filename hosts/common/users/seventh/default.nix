@@ -1,11 +1,11 @@
 {
-  pkgs,
-  config,
-  ...
+pkgs,
+config,
+...
 }: let
   ifTheyExist = groups: builtins.filter (group: builtins.hasAttr group config.users.groups) groups;
 in {
-  # users.mutableUsers = false;
+
   users.users.seventh = {
     isNormalUser = true;
     shell = pkgs.zsh;
@@ -44,4 +44,9 @@ in {
   programs.zsh.enable = true;
 
   services.geoclue2.enable = true;
+  services.gnome3.gnome-keyring.enable = true;
+
+  # security.pam.services.lightdm.enableGnomeKeyring = true;
+  # ssh.startAgent = true;
+
 }

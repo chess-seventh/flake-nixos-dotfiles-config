@@ -5,8 +5,8 @@ pkgs,
 }: {
   programs.waybar = {
     enable = true;
-    # package = pkgs.unstable.waybar;
-    package = pkgs.waybar;
+    package = pkgs.unstable.waybar;
+    # package = pkgs.waybar;
     systemd = {
       enable = true;
     };
@@ -142,6 +142,7 @@ pkgs,
           "tooltip" = false;
         };
         "temperature" = {
+          "thermal-zone" = 1;
           "critical-threshold" = 90;
           "interval" = 5;
           "format" = "{icon} {temperatureC}°";

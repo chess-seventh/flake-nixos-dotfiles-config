@@ -39,12 +39,16 @@
     settings = {
       # monitor = "";
       # monitor=",preferred,auto,1.0";
-      monitor="eDP-1,preferred,auto,1.0";
+      monitor= [
+        "eDP-1,1920x1200,1000x1600,1.0"
+        "DP-6,3840x1600,0x0,1.0"
+      ];
+
       # See https://wiki.hyprland.org/Configuring/Keywords/ for more
 
       # Execute your favorite apps at launch
       # exec-once = "pypr & hyprpaper & waypaper --restore --backend swaybg & ferdium & obsidian & firefox & spotify";
-      exec-once = "pypr & hyprpaper & ferdium & firefox & spotify";
+      exec-once = "pypr & nm-applet & blueman-applet & hyprpaper & ferdium & firefox & spotify & obsidian & waypaper --restore --backend swaybg";
 
       # Source a file (multi-file configs)
       source = "$HOME/.config/hypr/macchiato.conf";

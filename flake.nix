@@ -22,12 +22,6 @@
       url = "github:misterio77/nix-colors";
     }; 
 
-    # sops-nix = {
-    #   url = "github:Mic92/sops-nix";
-    #   inputs.nixpkgs.follows = "nixpkgs-unstable";
-    #   inputs.nixpkgs-stable.follows = "nixpkgs";
-    # };
-
     nixos-hardware.url = "github:NixOS/nixos-hardware";
 
     nixos-generators = {
@@ -71,48 +65,38 @@
     nixos-hardware,
     home-manager,
     ...
-  } @ inputs: let
-    inherit (self) outputs;
-    forEachSystem = nixpkgs.lib.genAttrs ["x86_64-linux"];
-    forEachPkgs = f: forEachSystem (sys: f nixpkgs.legacyPackages.${sys});
+    } @ inputs: let
+      inherit (self) outputs;
+      forEachSystem = nixpkgs.lib.genAttrs ["x86_64-linux"];
+      forEachPkgs = f: forEachSystem (sys: f nixpkgs.legacyPackages.${sys});
 
-    mkNixos = modules:
-      nixpkgs.lib.nixosSystem {
-        inherit modules;
-        specialArgs = {inherit inputs outputs;};
-      };
-
-    mkHome = modules: pkgs:
-      home-manager.lib.homeManagerConfiguration {
-        inherit modules pkgs;
-        extraSpecialArgs = {inherit inputs outputs;};
-      };
-  in {
-    nixosModules = import ./modules/nixos;
-    homeManagerModules = import ./modules/home-manager;
-
-    formatter = forEachPkgs (pkgs: pkgs.alejandra);
-
-    overlays = import ./overlays {inherit inputs outputs;};
-
-    # Also setup iso installs with nixos generators
-    packages = forEachPkgs (
-      pkgs:
-        (import ./pkgs {inherit pkgs;})
-        // (import ./generators {
-          inherit pkgs inputs outputs;
+      mkNixos = modules:
+        nixpkgs.lib.nixosSystem {
+          inherit modules;
           specialArgs = {inherit inputs outputs;};
-        })
-    );
+        };
 
-    devShells = forEachPkgs (pkgs: import ./shell.nix {inherit pkgs;});
+      mkHome = modules: pkgs:
+        home-manager.lib.homeManagerConfiguration {
+          inherit modules pkgs;
+          extraSpecialArgs = {inherit inputs outputs;};
+        };
+    in {
+      # nixosModules = import ./modules/nixos;
+      homeManagerModules = import ./modules/home-manager;
 
-    nixosConfigurations = {
-      upsetter = mkNixos [./hosts/upsetter];
+      formatter = forEachPkgs (pkgs: pkgs.alejandra);
+
+      overlays = import ./overlays {inherit inputs outputs;};
+
+      devShells = forEachPkgs (pkgs: import ./shell.nix {inherit pkgs;});
+
+      nixosConfigurations = {
+        upsetter = mkNixos [./hosts/upsetter];
+      };
+
+      homeConfigurations = {
+        "seventh@upsetter" = mkHome [./home-manager/seventh/upsetter.nix] nixpkgs.legacyPackages."x86_64-linux";
+      };
     };
-
-    homeConfigurations = {
-      "seventh@upsetter" = mkHome [./home-manager/seventh/upsetter.nix] nixpkgs.legacyPackages."x86_64-linux";
-    };
-  };
 }

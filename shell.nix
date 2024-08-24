@@ -1,9 +1,16 @@
-# Shell for bootstrapping flake-enabled nix and home-manager
-# You can enter it through 'nix develop' or (legacy) 'nix-shell'
-{pkgs ? (import ./nixpkgs.nix) {}}: {
-  default = pkgs.mkShell {
-    # Enable experimental features without having to specify the argument
-    NIX_CONFIG = "experimental-features = nix-command flakes";
-    nativeBuildInputs = with pkgs; [nix home-manager git ssh-to-age gnupg age nil];
-  };
+{pkgs ? (import ./nixpkgs.nix) {}}: 
+
+pkgs.mkShell {
+  buildInputs = [
+
+    # keep this line if you use bash
+    pkgs.zshInteractive
+    pkgs.nix
+    pkgs.home-manager
+    pkgs.git
+    pkgs.ssh-to-age
+    pkgs.gnupg
+    pkgs.age
+    pkgs.nil
+  ];
 }

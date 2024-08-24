@@ -27,6 +27,7 @@
     phpPackages.composer
     python3
     rustc
+    rust-analyzer
     statix
     stylua
     unzip

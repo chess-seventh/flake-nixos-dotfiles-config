@@ -7,8 +7,8 @@ pkgs,
     package = inputs.hyprpaper.packages.${pkgs.system}.default;
     enable = true;
     settings = {
-      preload = "~/Pictures/wallpaper";
-      wallpaper = ",~/Pictures/wallpaper";
+      preload = "~/Pictures/wave.png";
+      wallpaper = ",~/Pictures/wave.png";
 
       ipc = "off";
       splash = false;

@@ -228,6 +228,7 @@
     jetbrains.pycharm-professional
     obsidian
     spotify
+    lutris
 
     # productivity
     #

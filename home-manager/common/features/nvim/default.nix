@@ -17,20 +17,29 @@
 
   home.packages = with pkgs; [
     alejandra
+    black
     cargo
     deadnix
     gcc
     gnumake
     # luajitPackages.luarocks-nix
+    lua-language-server
     nodejs
     php
     phpPackages.composer
+    pyright
     python3
-    rustc
+    ruff
+    ruff-lsp
     rust-analyzer
+    rustc
+    shellcheck
+    shfmt
     statix
     stylua
+    tflint
     unzip
+    yaml-language-server
   ];
 
   # xdg.configFile = {

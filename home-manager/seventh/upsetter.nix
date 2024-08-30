@@ -39,43 +39,43 @@
   home.file = {
     # ".config/hypr/card".source = config.lib.file.mkOutOfStoreSymlink "/dev/dri/by-path/pci-0000:06:00.0-card";
 
-    ".config/hypr/macchiato.conf".source = "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/hypr/macchiato.conf";
-    ".config/avizo/config.ini".source = "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/avizo/config.ini";
+    ".config/hypr/macchiato.conf".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/hypr/macchiato.conf";
+    ".config/avizo/config.ini".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/avizo/config.ini";
 
-    ".config/hypr/pyprland.toml".source = "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/hypr/pyprland.toml";
+    ".config/hypr/pyprland.toml".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/hypr/pyprland.toml";
 
-    ".config/lazygit/config.yml".source = "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/lazygit/config.yml";
+    ".config/lazygit/config.yml".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/lazygit/config.yml";
 
-    ".config/qutebrowser/autoconfig.yml".source = "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/qutebrowser/autoconfig.yml";
-    ".config/qutebrowser/config.py".source = "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/qutebrowser/config.py";
-    ".config/qutebrowser/quickmarks".source = "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/qutebrowser/quickmarks";
+    ".config/qutebrowser/autoconfig.yml".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/qutebrowser/autoconfig.yml";
+    ".config/qutebrowser/config.py".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/qutebrowser/config.py";
+    ".config/qutebrowser/quickmarks".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/qutebrowser/quickmarks";
 
-    ".config/qutebrowser/userscripts/cast".source = "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/qutebrowser/userscripts/cast";
-    ".config/qutebrowser/userscripts/gitclone".source = "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/qutebrowser/userscripts/gitclone";
-    ".config/qutebrowser/userscripts/password_fill".source = "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/qutebrowser/userscripts/password_fill";
-    ".config/qutebrowser/userscripts/qute_pass".source = "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/qutebrowser/userscripts/qute_pass";
-    ".config/qutebrowser/userscripts/readability".source = "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/qutebrowser/userscripts/readability";
-    ".config/qutebrowser/userscripts/readability-js".source = "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/qutebrowser/userscripts/readability-js";
-    ".config/qutebrowser/userscripts/taskadd".source = "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/qutebrowser/userscripts/taskadd";
-    ".config/qutebrowser/userscripts/translate".source = "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/qutebrowser/userscripts/translate";
+    ".config/qutebrowser/userscripts/cast".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/qutebrowser/userscripts/cast";
+    ".config/qutebrowser/userscripts/gitclone".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/qutebrowser/userscripts/gitclone";
+    ".config/qutebrowser/userscripts/password_fill".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/qutebrowser/userscripts/password_fill";
+    ".config/qutebrowser/userscripts/qute_pass".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/qutebrowser/userscripts/qute_pass";
+    ".config/qutebrowser/userscripts/readability".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/qutebrowser/userscripts/readability";
+    ".config/qutebrowser/userscripts/readability-js".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/qutebrowser/userscripts/readability-js";
+    ".config/qutebrowser/userscripts/taskadd".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/qutebrowser/userscripts/taskadd";
+    ".config/qutebrowser/userscripts/translate".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/qutebrowser/userscripts/translate";
 
-    ".config/dunst/dunstrc".source = "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/dunst/dunstrc";
+    ".config/dunst/dunstrc".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/dunst/dunstrc";
 
-    ".config/tmate/tmate_colors.conf".source = "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/tmate/tmate_colors.conf";
-    ".config/tmate/tmate_keybindings.conf".source = "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/tmate/tmate_keybindings.conf";
-    ".config/tmate/tmate_options.conf".source = "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/tmate/tmate_options.conf";
-    ".config/tmate/tmate_status_bar.conf".source = "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/tmate/tmate_status_bar.conf";
+    ".config/tmate/tmate_colors.conf".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/tmate/tmate_colors.conf";
+    ".config/tmate/tmate_keybindings.conf".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/tmate/tmate_keybindings.conf";
+    ".config/tmate/tmate_options.conf".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/tmate/tmate_options.conf";
+    ".config/tmate/tmate_status_bar.conf".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/tmate/tmate_status_bar.conf";
 
-    ".config/htop/htoprc".source = "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/htop/htoprc";
+    ".config/htop/htoprc".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/htop/htoprc";
 
-    ".config/btop/btop.conf".source = "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/btop/btop.conf";
+    ".config/btop/btop.conf".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/btop/btop.conf";
 
-    ".config/tmux/tmux_colors.conf".source = "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/tmux/tmux_colors.conf";
-    ".config/tmux/tmux_keybindings.conf".source = "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/tmux/tmux_keybindings.conf";
-    ".config/tmux/tmux_options.conf".source = "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/tmux/tmux_options.conf";
-    ".config/tmux/tmux_plugins_install.conf".source = "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/tmux/tmux_plugins_install.conf";
-    ".config/tmux/tmux_plugins_setting.conf".source = "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/tmux/tmux_plugins_setting.conf";
-    ".config/tmux/tmux_status_bar.conf".source = "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/tmux/tmux_status_bar.conf";
+    ".config/tmux/tmux_colors.conf".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/tmux/tmux_colors.conf";
+    ".config/tmux/tmux_keybindings.conf".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/tmux/tmux_keybindings.conf";
+    ".config/tmux/tmux_options.conf".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/tmux/tmux_options.conf";
+    ".config/tmux/tmux_plugins_install.conf".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/tmux/tmux_plugins_install.conf";
+    ".config/tmux/tmux_plugins_setting.conf".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/tmux/tmux_plugins_setting.conf";
+    ".config/tmux/tmux_status_bar.conf".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/src/git.sr.ht/chess7th/dotfiles/config/tmux/tmux_status_bar.conf";
 
   };
 
@@ -196,6 +196,8 @@
     wdisplays
     wl-clipboard
     gnome.gnome-keyring
+    moreutils
+    imagemagick
 
     # web & goodies
     #
@@ -222,6 +224,18 @@
     python3
     teller
     zig
+
+    ## NVIM LSP
+    ## nix-ld
+    black
+    lua-language-server
+    pyright
+    ruff
+    ruff-lsp
+    shellcheck
+    shfmt
+    tflint
+    yaml-language-server
 
     # UNFREE
     #
@@ -317,6 +331,7 @@
     slack
 
   ];
+  
 
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

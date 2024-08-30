@@ -46,6 +46,20 @@ in {
   services.geoclue2.enable = true;
   services.gnome3.gnome-keyring.enable = true;
 
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    black
+    lua-language-server
+    # lua_ls
+    pyright
+    # pyright-langserver
+    ruff
+    ruff-lsp
+    shellcheck
+    shfmt
+    tflint
+    yaml-language-server
+  ];
   # security.pam.services.lightdm.enableGnomeKeyring = true;
   # ssh.startAgent = true;
 

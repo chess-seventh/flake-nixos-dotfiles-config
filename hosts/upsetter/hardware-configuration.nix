@@ -13,7 +13,8 @@
   hardware = {
     ipu6 = {
       enable = false;
-      platform = "ipu6epmtl";
+      # platform = "ipu6epmtl";
+      # platform = "ipu6ep";
     };
 
     bluetooth = {
@@ -40,26 +41,35 @@
   };
 
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot = {
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
 
-  boot.initrd.luks.devices."luks-298baab0-a3a5-4047-8b67-f029dcb5b71d".device = "/dev/disk/by-uuid/298baab0-a3a5-4047-8b67-f029dcb5b71d";
+    initrd = {
+      luks.devices."luks-298baab0-a3a5-4047-8b67-f029dcb5b71d".device = "/dev/disk/by-uuid/298baab0-a3a5-4047-8b67-f029dcb5b71d";
+      luks.devices."luks-36243564-61b5-4a6d-9d3b-891a1e6ff056".device = "/dev/disk/by-uuid/36243564-61b5-4a6d-9d3b-891a1e6ff056";
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules = [ "xe" ];
-  # boot.initrd.kernelModules = [ ];
+      availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usb_storage" "sd_mod" ];
+      kernelModules = [ "xe" ];
+      # kernelModules = [ ];
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-  # boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_9;
-  boot.kernelModules = [ "kvm-intel" ];
-  boot.extraModulePackages = [ ];
+    };
+
+    kernelPackages = pkgs.linuxPackages_latest;
+    # kernelPackages = pkgs.linuxKernel.packages.linux_6_9;
+    kernelModules = [ "kvm-intel" ];
+    extraModulePackages = [ ];
+
+  };
+
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/a1132835-1edf-451b-8157-d21b997e6e33";
       fsType = "ext4";
     };
 
-  boot.initrd.luks.devices."luks-36243564-61b5-4a6d-9d3b-891a1e6ff056".device = "/dev/disk/by-uuid/36243564-61b5-4a6d-9d3b-891a1e6ff056";
 
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/D8B0-A3CA";

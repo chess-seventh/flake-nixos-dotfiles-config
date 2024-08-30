@@ -328,11 +328,11 @@
         # Scroll through existing workspaces with mainMod + scroll
         "$mainMod, mouse_down, workspace, e+1"
         "$mainMod, mouse_up, workspace, e-1"
-        "$mainMod SHIFT, E, movewindow, mon:eDP-1"
-        "$mainMod SHIFT, W, movewindow, mon:DP-6"
+        "$mainMod SHIFT, W, movewindow, mon:eDP-1"
+        "$mainMod SHIFT, E, movewindow, mon:DP-6"
 
-        "$mainMod, E, focusmonitor, eDP-1"
-        "$mainMod, W, focusmonitor, DP-6"
+        "$mainMod, W, focusmonitor, eDP-1"
+        "$mainMod, E, focusmonitor, DP-6"
       ];
 
       "$dropterm"  = "^(main_dropterm)$";

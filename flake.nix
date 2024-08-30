@@ -71,24 +71,27 @@
     nixos-hardware,
     home-manager,
     nix-ld,
+    nixpkgs-unstable,
     ...
     } @ inputs: let
       inherit (self) outputs;
       forEachSystem = nixpkgs.lib.genAttrs ["x86_64-linux"];
       forEachPkgs = f: forEachSystem (sys: f nixpkgs.legacyPackages.${sys});
+      system = "x86_64-linux";
+      unstablePkgs = nixpkgs-unstable.legacyPackages.${system};
 
       mkNixos = modules:
         nixpkgs.lib.nixosSystem {
           inherit modules;
-        #   modules = [
-        # # ... add this line to the rest of your configuration modules
-        #     nix-ld.nixosModules.nix-ld
-        #
-        #   # The module in this repository defines a new module under (programs.nix-ld.dev) instead of (programs.nix-ld)
-        #   # to not collide with the nixpkgs version.
-        #   { programs.nix-ld.dev.enable = true; }
-        #   ];
-          specialArgs = {inherit inputs outputs;};
+          specialArgs = {
+            inherit inputs outputs;
+            unstablePkgs = import nixpkgs-unstable {
+              config = {
+                allowUnfree = true;
+              };
+              localSystem = { inherit system; };
+            };
+          };
         };
 
       mkHome = modules: pkgs:

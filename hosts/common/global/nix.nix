@@ -15,7 +15,7 @@
     };
     gc = {
       automatic = true;
-      dates = "daily";
+      dates = "weekly";
       # Delete older generations too
       options = "--delete-older-than 7d";
     };

@@ -1,6 +1,5 @@
+{ ... }: 
 {
-  ...
-}: {
   imports = [
     ./autojump.nix
     ./bash.nix
@@ -11,7 +10,7 @@
     ./git.nix
     ./joshuto.nix
     ./jq.nix
-    # ./lorri.nix
+    ./lorri.nix
     ./mcfly.nix
     ./pnpm.nix
     ./ssh.nix
@@ -27,5 +26,5 @@
       allowUnfreePredicate = (_: true);
     };
   };
-  services.lorri.enable = true;
+
 }

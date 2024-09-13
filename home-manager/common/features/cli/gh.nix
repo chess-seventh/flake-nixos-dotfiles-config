@@ -1,5 +1,4 @@
 {
-  config,
   pkgs,
   ...
 }: {
@@ -11,7 +10,4 @@
       prompt = "enabled";
     };
   };
-  # home.persistence = {
-  #   "/home/${config.home.username}".directories = [".config/gh"];
-  # };
 }

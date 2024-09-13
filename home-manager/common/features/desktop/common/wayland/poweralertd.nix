@@ -1,3 +1,3 @@
 {
-  services.poweralertd.enable = true;
+  services.poweralertd.enable = false;
 }

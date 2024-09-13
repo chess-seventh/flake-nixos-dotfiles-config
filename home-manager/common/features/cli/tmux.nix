@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
   programs.tmux = {
@@ -16,18 +16,49 @@
     baseIndex = 1;
 
     plugins = with pkgs; [
-      tmuxPlugins.tmux-fzf
-      tmuxPlugins.resurrect
-      tmuxPlugins.continuum
-      tmuxPlugins.sessionist
+      {
+        plugin = tmuxPlugins.resurrect;
+        extraConfig = ''
+        run-shell ${pkgs.tmuxPlugins.resurrect}/share/tmux-plugins/tmux-resurrect/resurrect.tmux
+
+        set -g @resurrect-strategy-vim 'session'
+        set -g @resurrect-capture-pane-contents 'on'
+        set -g @resurrect-save 'S'
+        set -g @resurrect-restore 'R'
+        '';
+      }
+      {
+        plugin = tmuxPlugins.continuum;
+        extraConfig = ''
+          set -g @continuum-restore 'on'
+          set -g @continuum-boot 'on'
+          set -g @continuum-save-interval '1' # minutes
+        '';
+      }
+      {
+        plugin = tmuxPlugins.tmux-fzf;
+        extraConfig = ''
+          bind-key "w" run-shell -b "${pkgs.tmuxPlugins.tmux-fzf}/share/tmux-plugins/tmux-fzf/scripts/window.sh switch"
+          bind-key "C-w" run-shell -b "${pkgs.tmuxPlugins.tmux-fzf}/share/tmux-plugins/tmux-fzf/scripts/window.sh rename"
+        '';
+      }
+      {
+        plugin = tmuxPlugins.tmux-colors-solarized;
+        extraConfig = ''
+          set -g @solarized 'dark'
+        '';
+      }
+      # tmuxPlugins.catppuccin
       tmuxPlugins.fzf-tmux-url
-      tmuxPlugins.yank
-      tmuxPlugins.tmux-colors-solarized
+      tmuxPlugins.sessionist
       tmuxPlugins.sidebar
-      tmuxPlugins.catppuccin
+      tmuxPlugins.tmux-colors-solarized
+      tmuxPlugins.yank
     ];
 
-    extraConfig = ''
+      extraConfig = ''
+
+# Mouse selection
 
 unbind %
 unbind '"'
@@ -116,12 +147,14 @@ bind -r M-j resize-pane -D 5
 bind -r M-k resize-pane -U 5
 bind -r M-l resize-pane -R 5
 
-
-# Mouse selection
-
+#
 # Toggle mouse on/off
 bind-key m set-option -gF mouse "#{?mouse,off,on}" ; display-message "#{?mouse,Mouse: ON,Mouse: OFF}"
-    '';
+
+source-file "${config.home.homeDirectory}/.config/tmux/tmux_options.conf"
+source-file "${config.home.homeDirectory}/.config/tmux/tmux_status_bar.conf"
+
+      '';
 
   };
 }

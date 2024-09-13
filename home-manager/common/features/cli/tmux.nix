@@ -22,18 +22,18 @@
       {
         plugin = tmuxPlugins.resurrect;
         extraConfig = ''
-        run-shell ${pkgs.tmuxPlugins.resurrect}/share/tmux-plugins/tmux-resurrect/resurrect.tmux
+        run-shell ${pkgs.tmuxPlugins.resurrect}/share/tmux-plugins/resurrect/resurrect.tmux
 
         set -g @resurrect-strategy-vim 'session'
         set -g @resurrect-capture-pane-contents 'on'
         set -g @resurrect-save 'S'
-        set -g @resurrect-restore 'r'
+        set -g @resurrect-restore 'R'
         '';
       }
       {
         plugin = tmuxPlugins.continuum;
         extraConfig = ''
-          run-shell ${pkgs.tmuxPlugins.resurrect}/share/tmux-plugins/continuum/continuum.tmux
+          run-shell ${pkgs.tmuxPlugins.continuum}/share/tmux-plugins/continuum/continuum.tmux
 
           set -g @continuum-boot 'on'
           set -g @continuum-restore 'on'

@@ -28,17 +28,10 @@ config,
 
   home.sessionVariables = {
     EDITOR = "nvim";
-    # GTK_THEME = "Catppuccin-Macchiato-Standard-Teal-Dark";
-    # XCURSOR_THEME = "Catppuccin-Macchiato-Teal";
-    # XCURSOR_SIZE = "24";
-    # HYPRCURSOR_THEME = "Catppuccin-Macchiato-Teal";
-    # HYPRCURSOR_SIZE = "24";
   };
 
 
   home.file = {
-    # ".config/hypr/card".source = config.lib.file.mkOutOfStoreSymlink "/dev/dri/by-path/pci-0000:06:00.0-card";
-
     ".config/hypr/macchiato.conf".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/src/git.sr.ht/chess7th/flake-nixos-config/dotfiles/hypr/macchiato.conf";
     ".config/hypr/pyprland.toml".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/src/git.sr.ht/chess7th/flake-nixos-config/dotfiles/hypr/pyprland.toml";
 
@@ -339,8 +332,6 @@ config,
     slack
 
   ];
-
-
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "23.05";

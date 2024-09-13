@@ -11,17 +11,12 @@
     secureSocket = false;
     mouse = true;
 
-    # terminal = "alacritty";
-
     keyMode = "vi";
     clock24 = true;
     historyLimit = 5000000;
     prefix = "C-a";
 
-    # baseIndex = 0;
-
     sensibleOnTop = false;
-    # tmuxp.enable = true;
 
     plugins = with pkgs; [
       {
@@ -58,7 +53,6 @@
           set -g @solarized 'dark'
         '';
       }
-      # tmuxPlugins.catppuccin
       tmuxPlugins.fzf-tmux-url
       tmuxPlugins.sessionist
       tmuxPlugins.sidebar
@@ -71,7 +65,6 @@
       source-file ${config.home.homeDirectory}/src/git.sr.ht/chess7th/flake-nixos-config/dotfiles/tmux/tmux_options.conf
       source-file ${config.home.homeDirectory}/src/git.sr.ht/chess7th/flake-nixos-config/dotfiles/tmux/tmux_status_bar.conf
     '';
-
   };
 }
 

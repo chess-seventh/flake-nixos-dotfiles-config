@@ -7,11 +7,11 @@ pkgs,
     package = inputs.hyprpaper.packages.${pkgs.system}.default;
     enable = true;
     settings = {
-      preload = "~/Pictures/wave.png";
-      wallpaper = ",~/Pictures/wave.png";
+      preload = "/home/seventh/Pictures/wave.png";
+      wallpaper = ",/home/seventh/Pictures/wave.png";
 
-      ipc = "off";
-      splash = false;
+      ipc = true;
+      splash = true;
     };
   };
 }

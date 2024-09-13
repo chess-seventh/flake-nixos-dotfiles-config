@@ -40,6 +40,7 @@
     tflint
     unzip
     yaml-language-server
+    marksman
   ];
 
   # xdg.configFile = {

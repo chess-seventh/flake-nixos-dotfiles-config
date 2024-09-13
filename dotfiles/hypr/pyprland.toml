@@ -1,0 +1,45 @@
+[pyprland]
+plugins = [
+  "expose",
+  "fetch_client_menu",
+  "lost_windows",
+  "magnify",
+  "scratchpads",
+  "shift_monitors",
+  "toggle_special",
+  "workspaces_follow_focus",
+]
+
+# using variables for demonstration purposes (not needed)
+# [pyprland.variables]
+# term_classed = "kitty --class"
+
+[scratchpads.term]
+animation = "fromTop"
+command = "alacritty --class main_dropterm"
+class = "main_dropterm"
+size = "75% 60%"
+max_size = "1920px 100%"
+
+[scratchpads.volume]
+command = "pavucontrol --class volume_sidemenu"
+animation = "fromLeft"
+class = "volume_sidemenu"
+size = "40% 70%"
+unfocus = "hide"
+excludes = "*"
+lazy = true
+margin = 90
+multi = false
+
+[shortcuts_menu.entries]
+"Color picker" = [
+  { name = "format", options = [
+    "hex",
+    "rgb",
+    "hsv",
+    "hsl",
+    "cmyk",
+  ] },
+  "sleep 0.2; hyprpicker --format [format] -a", # sleep to let the menu close before the picker opens
+]

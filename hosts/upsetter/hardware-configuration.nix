@@ -28,11 +28,14 @@
 
     opengl = {
       enable = true;
-      package = unstablePkgs.mesa.drivers;
+      # package = unstablePkgs.mesa.drivers;
+      package = pkgs.mesa.drivers;
       driSupport = true;
-      package32 = unstablePkgs.pkgsi686Linux.mesa.drivers;
+      # package32 = unstablePkgs.pkgsi686Linux.mesa.drivers;
+      package32 = pkgs.pkgsi686Linux.mesa.drivers;
       driSupport32Bit = true;
-      extraPackages = with unstablePkgs; [
+      # extraPackages = with unstablePkgs; [
+      extraPackages = with pkgs; [
         intel-media-driver # LIBVA_DRIVER_NAME=iHD
         vaapiVdpau
         libvdpau-va-gl
@@ -57,8 +60,6 @@
 
       availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usb_storage" "sd_mod" ];
       kernelModules = [ "xe" ];
-      # kernelModules = [ ];
-
     };
 
     kernelPackages = pkgs.linuxPackages_latest;

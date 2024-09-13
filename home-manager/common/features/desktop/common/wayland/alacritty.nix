@@ -10,6 +10,7 @@ in {
       font = {
         normal = {
           family = "Fira Mono";
+          # family = "Agave Nerd Font";
         };
       };
       cursor = {

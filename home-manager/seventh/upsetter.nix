@@ -1,11 +1,11 @@
 # This is your home-manager configuration file
 # Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
 {
-  inputs,
-  lib,
-  pkgs,
-  config,
-  ...
+inputs,
+lib,
+pkgs,
+config,
+...
 }: {
   # You can import other home-manager modules here
   imports = [
@@ -129,6 +129,7 @@
     gh
     git
     git-extras
+    git-filter-repo
     gping
     jq
     just
@@ -198,6 +199,21 @@
     gnome.gnome-keyring
     moreutils
     imagemagick
+    cookiecutter
+
+    (pkgs.writeShellApplication {
+      name = "pux";
+      runtimeInputs = [ pkgs.tmux ];
+      text = ''
+        PRJ="''$(zoxide query -i)"
+        echo "Launching tmux for ''$PRJ"
+        set -x
+        cd "''$PRJ" && \
+        TMUX_PRJ="''$(basename "''$PWD" | sed 's#.*/##')" && \
+        echo "TMUX Session name: ''$TMUX_PRJ" && \
+        exec tmux new-session -A -s "''$TMUX_PRJ"
+        '';
+    })
 
     # web & goodies
     #
@@ -331,7 +347,7 @@
     slack
 
   ];
-  
+
 
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

@@ -4,7 +4,6 @@ pkgs.mkShell {
   buildInputs = [
 
     # keep this line if you use bash
-    pkgs.zshInteractive
     pkgs.nix
     pkgs.home-manager
     pkgs.git

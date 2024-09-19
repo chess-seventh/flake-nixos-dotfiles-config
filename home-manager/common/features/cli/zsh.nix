@@ -28,22 +28,20 @@
 
       cat = "bat";
 
-      hmsi = "home-manager switch --impure";
-
-      update = "sudo nixos-rebuild switch --upgrade";
-      riceit = "home-manager switch --impure && hyprctl reload && kill -9 $(pidof waybar) ; waybar & disown ";
-      sliceit = "sudo nixos-rebuild switch && home-manager switch --impure && hyprctl reload && kill -9 $(pidof waybar) ; waybar & disown ";
+      hmsi = "home-manager switch --impure --flake .#seventh@upsetter";
+      hmup = "sudo nixos-rebuild switch --upgrade --impure --flake .#upsetter";
 
       clippy = "cargo clippy -- -W clippy::pedantic -A clippy::missing_errors_doc -A clippy::must_use_candidate -A clippy::module_name_repetitions -A clippy::doc_markdown -A clippy::missing_panics_doc";
 
-      dotfiles = "cd ~/src/git.sr.ht/chess7th/dotfiles/";
-      dots = "vim ~/.config/home-manager/flake.nix";
+      dotfiles = "cd ~/src/git.sr.ht/chess7th/flake-nixos-config/";
 
       bigdirs = "du -h -a -d 1 ./ | sort -h -r | head -n 10";
 
       feh = "feh --scale-down --auto-zoom";
 
       df = "df -h";
+
+      emoji = "rofimoji --selector wofi --clipboarder wl-copy -a copy";
     };
 
     envExtra = ''

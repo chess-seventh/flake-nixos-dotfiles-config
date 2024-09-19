@@ -170,6 +170,11 @@ config,
     zsh-powerlevel10k
     zsh-syntax-highlighting
 
+    # Mailing
+    #
+    notmuch
+    neomutt
+
     # ricing
     #
     fastfetch
@@ -186,6 +191,7 @@ config,
     imagemagick
     cookiecutter
 
+    # This kinda works but doesn't switch to the new session
     (pkgs.writeShellApplication {
       name = "pux";
       runtimeInputs = [ pkgs.tmux ];
@@ -211,6 +217,7 @@ config,
     #
     cargo
     devbox
+    docker
     gcc
     go
     jdk
@@ -248,9 +255,10 @@ config,
     # productivity
     #
     qutebrowser
-    scrot
     taskwarrior
     zathura
+    slurp
+    grim
 
     # hyprland
     #
@@ -329,7 +337,26 @@ config,
     cmake
     gnumake
     k9s
+    kubectl
     slack
+    helmfile
+    terraform
+    terragrunt
+    opentofu
+
+    pulumi
+    pulumictl
+    pulumi-esc
+
+    kubernetes-helm
+    (wrapHelm kubernetes-helm {
+        plugins = with pkgs.kubernetes-helmPlugins; [
+          helm-secrets
+          helm-diff
+          helm-s3
+          helm-git
+        ];
+      })
 
   ];
 

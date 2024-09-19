@@ -1,6 +1,8 @@
 { ... }:
 
 {
+  virtualisation.docker.enable = true;
+
   services = {
     printing.enable = true;
 

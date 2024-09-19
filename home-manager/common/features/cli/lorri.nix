@@ -2,7 +2,7 @@
 
 {
   services.lorri = {
-    enable = true;
+    enable = false;
   };
 }
 

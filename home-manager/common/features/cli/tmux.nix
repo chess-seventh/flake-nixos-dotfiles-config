@@ -6,11 +6,12 @@
     enable = true;
     shortcut = "a";
     aggressiveResize = true;
-    newSession = false;
+    newSession = true;
     escapeTime = 0;
-    secureSocket = false;
+    secureSocket = true;
     mouse = true;
-
+    baseIndex = 1;
+    shell = "${pkgs.zsh}/bin/zsh";
     keyMode = "vi";
     clock24 = true;
     historyLimit = 5000000;
@@ -27,7 +28,7 @@
         set -g @resurrect-strategy-vim 'session'
         set -g @resurrect-capture-pane-contents 'on'
         set -g @resurrect-save 'S'
-        set -g @resurrect-restore 'R'
+        set -g @resurrect-restore 'r'
         '';
       }
       {

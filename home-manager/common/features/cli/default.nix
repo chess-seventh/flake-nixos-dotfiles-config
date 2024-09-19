@@ -13,9 +13,11 @@
     ./lorri.nix
     ./mcfly.nix
     ./pnpm.nix
+    # ./skim.nix
     ./ssh.nix
     ./starship.nix
     ./tmux.nix
+    ./zellij.nix
     ./zoxide.nix
     ./zsh.nix
   ];
@@ -25,6 +27,23 @@
       allowUnfree = true;
       allowUnfreePredicate = (_: true);
     };
+  };
+
+  programs.skim = {
+    enable = true;
+    enableZshIntegration = true;
+
+    defaultCommand = "fd --type f";
+    changeDirWidgetCommand = "fd --type d";
+
+    fileWidgetOptions = [
+      "--preview 'head {}'"
+    ];
+
+    historyWidgetOptions = [
+      "--tac"
+      "--exact"
+    ];
   };
 
 }

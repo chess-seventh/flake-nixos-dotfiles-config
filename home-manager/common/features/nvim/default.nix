@@ -1,6 +1,6 @@
 {
-  pkgs,
-  ...
+pkgs,
+...
 }: {
   home.sessionVariables.EDITOR = "nvim";
 
@@ -9,10 +9,24 @@
     vimAlias = true;
     vimdiffAlias = true;
     package = pkgs.unstable.neovim-unwrapped;
-    plugins = with pkgs; [
-      vimPlugins.nvim-treesitter
-      vimPlugins.nvim-treesitter.withAllGrammars
+    plugins = with pkgs.vimPlugins; [
+      nvim-treesitter
+      nvim-treesitter.withAllGrammars
+      colorizer
+      nvim-highlight-colors
     ];
+
+    extraPackages = with pkgs; [
+      (python3.withPackages (ps: with ps; [
+        black
+        flake8
+      ]))
+    ];
+
+    extraPython3Packages = (ps: with ps; [
+      jedi
+    ]);
+
   };
 
   home.packages = with pkgs; [

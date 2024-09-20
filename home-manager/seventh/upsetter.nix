@@ -174,6 +174,10 @@ config,
     #
     notmuch
     neomutt
+    mbsync
+    msmntp
+    alot
+    aerc
 
     # ricing
     #
@@ -259,6 +263,7 @@ config,
     zathura
     slurp
     grim
+    feh
 
     # hyprland
     #

@@ -8,7 +8,6 @@
   imports =
     [ 
       ./hardware-configuration.nix
-      # ./laptop/base.nix
       ./laptop/common.nix
       ./laptop/networking.nix
       ./laptop/services.nix

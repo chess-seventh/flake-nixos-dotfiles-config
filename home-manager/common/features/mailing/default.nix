@@ -9,6 +9,7 @@
     ./neomutt.nix
     ./notmuch.nix
     ./proton-bridge.nix
+    ./proton-bridge-service.nix
   ];
 
 

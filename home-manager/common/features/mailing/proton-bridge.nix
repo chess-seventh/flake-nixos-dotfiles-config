@@ -1,12 +1,8 @@
-{ config, lib, pkgs, ... }:
-
-with lib;
+{ config, lib, pkgs, ... }: with lib;
 let
   cfg = config.services.protonmail-bridge;
-  #Still need to integrate more closely with the email management capabilities of home-manager
 in
-{
-  ##### interface
+  {
   options = {
     services.protonmail-bridge = {
       enable = mkOption {
@@ -15,26 +11,31 @@ in
         description = "Whether to enable the Bridge.";
       };
 
-      nonInteractive = mkOption {
-        type = types.bool;
-        default = false;
-        description = "Start Bridge entirely noninteractively";
+      package = mkOption {
+        type = types.package;
+        default = pkgs.protonmail-bridge;
+        defaultText = literalExpression "pkgs.protonmail-bridge";
+        description = "The protonmail-bridge package to use.";
       };
 
       logLevel = mkOption {
-        type = types.enum [ "panic" "fatal" "error" "warn" "info" "debug" "debug-client" "debug-server" ];
+        type = types.enum [
+          "panic"
+          "fatal"
+          "error"
+          "warn"
+          "info"
+          "debug"
+        ];
         default = "info";
         description = "The log level";
       };
-
     };
   };
 
-  ##### implementation
   config = mkIf cfg.enable {
+    home.packages = [ cfg.package ];
 
-    home.packages = [ pkgs.protonmail-bridge ];
-    
     systemd.user.services.protonmail-bridge = {
       Unit = {
         Description = "Protonmail Bridge";
@@ -43,7 +44,7 @@ in
 
       Service = {
         Restart = "always";
-        ExecStart = "${pkgs.protonmail-bridge}/bin/protonmail-bridge --no-window --log-level ${cfg.logLevel}" + optionalString (cfg.nonInteractive) " --noninteractive";
+        ExecStart = "${cfg.package}/bin/protonmail-bridge --noninteractive --log-level ${cfg.logLevel}";
       };
 
       Install = {
@@ -52,3 +53,4 @@ in
     };
   };
 }
+

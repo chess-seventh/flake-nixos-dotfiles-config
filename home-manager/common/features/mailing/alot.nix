@@ -25,5 +25,21 @@
       "name_of_tag".translation = "";
     };
   };
+
+  accounts = {
+    email.accounts."francesco@piva.online" = {
+      alot = {
+        contactCompletion = {
+          type = "shellcommand";
+          command = "abook --mutt-query";
+          regexp = "'^(?P<email>[^@]+@[^\t]+)\t+(?P<name>[^\t]+)'";
+          ignorecase = "True";
+        };
+        extraConfig = {};
+      };
+    };
+  };
+
+
 }
 

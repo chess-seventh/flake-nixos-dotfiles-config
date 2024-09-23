@@ -1,7 +1,7 @@
 { ... }: 
 {
   imports = [
-    # ./accounts.nix
+    ./accounts.nix
     ./aerc.nix
     ./alot.nix
     ./mbsync.nix

@@ -144,10 +144,12 @@
           -- TODO { import = "lazyvim.plugins.extras.lang.toml" },
           -- TODO { import = "lazyvim.plugins.extras.util.octo" },
 
+          -- ERROR here
+          -- TODO { import = "lazyvim.plugins.extras.coding.yanky" },
+
           { import = "lazyvim.plugins.extras.coding.copilot" },
           { import = "lazyvim.plugins.extras.coding.mini-comment" },
           { import = "lazyvim.plugins.extras.coding.mini-surround" },
-          { import = "lazyvim.plugins.extras.coding.yanky" },
           { import = "lazyvim.plugins.extras.editor.dial" },
           { import = "lazyvim.plugins.extras.editor.mini-diff" },
           { import = "lazyvim.plugins.extras.editor.mini-files" },

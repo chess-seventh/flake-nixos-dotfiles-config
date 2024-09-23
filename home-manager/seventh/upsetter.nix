@@ -62,6 +62,7 @@ config,
     ".config/htop/htoprc".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/src/git.sr.ht/chess7th/flake-nixos-config/dotfiles/htop/htoprc";
 
     ".config/btop/btop.conf".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/src/git.sr.ht/chess7th/flake-nixos-config/dotfiles/btop/btop.conf";
+
   };
 
   home.packages = with pkgs; [
@@ -75,6 +76,7 @@ config,
     avizo
     dunst
     fish
+    geeqie
     openssl
     pamixer
     pass
@@ -172,12 +174,11 @@ config,
 
     # Mailing
     #
-    notmuch
-    neomutt
-    mbsync
-    msmntp
-    alot
     aerc
+    alot
+    msmtp
+    neomutt
+    notmuch
 
     # ricing
     #

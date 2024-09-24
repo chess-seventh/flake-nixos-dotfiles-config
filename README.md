@@ -16,6 +16,7 @@ production-like stable state.
 - `tmux` & `zellij`
 - `mutt` (WIP)
 - `and more...`
+- test
 
 /!\ TODO /!\ Finish the list of goodies in here. /!\ TODO /!\
 

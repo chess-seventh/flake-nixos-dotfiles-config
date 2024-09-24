@@ -47,6 +47,8 @@
       unzip
       vscode-langservers-extracted
       yaml-language-server
+      markdownlint-cli
+      markdownlint-cli2
     ];
 
     plugins = with pkgs.vimPlugins; [
@@ -56,7 +58,7 @@
     extraLuaConfig =
       let
       plugins = with pkgs.vimPlugins; [
-      LazyVim
+        LazyVim
 
         bufferline-nvim
         cmp-buffer

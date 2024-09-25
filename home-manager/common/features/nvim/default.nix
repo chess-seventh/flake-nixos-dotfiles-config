@@ -24,6 +24,8 @@
       gopls
       haskell-language-server
       lua-language-server
+      markdownlint-cli
+      markdownlint-cli2
       marksman
       nil
       nodejs
@@ -47,8 +49,6 @@
       unzip
       vscode-langservers-extracted
       yaml-language-server
-      markdownlint-cli
-      markdownlint-cli2
     ];
 
     plugins = with pkgs.vimPlugins; [

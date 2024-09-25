@@ -67,6 +67,10 @@ home-manager switch --flake .#{INSERT_USER_NAME}@{INSERT_HOST_NAME}
 
 ### Sops & Passwords & Age
 
-I have an Yubikey, but still haven't had the time nor the proper understanding on how to configure all my passwords, ssh-keys, gpg etc. on it.
+I have an Yubikey, but still haven't had the time nor the proper understanding
+on how to configure all my passwords, ssh-keys, gpg etc. with it.
 
-```yaml
+## Next Steps
+
+- Use any Nixos deploy tools to roll out all the same base tooling to the
+remote machines.

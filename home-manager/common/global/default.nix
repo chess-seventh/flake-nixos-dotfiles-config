@@ -21,6 +21,7 @@ outputs,
       permittedInsecurePackages = [
         "nix-2.15.3"
         "electron-25.9.0"
+        "openssl-1.1.1w"
       ];
     };
   };

@@ -37,6 +37,7 @@ config,
     julia
     lua
     luarocks
+    niv
     nodejs
     php
     pipenv

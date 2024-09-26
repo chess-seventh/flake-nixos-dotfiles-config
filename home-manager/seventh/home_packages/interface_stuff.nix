@@ -5,6 +5,7 @@ pkgs,
 config,
 ...
 }: {
+
   home.packages = with pkgs; [
     avizo
     catppuccin-cursors.macchiatoTeal
@@ -46,6 +47,7 @@ config,
     yubikey-manager-qt
     yubikey-personalization
     zathura
+    sublime4
   ];
 }
 

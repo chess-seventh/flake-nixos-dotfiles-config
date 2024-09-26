@@ -62,6 +62,7 @@
 
         bufferline-nvim
         cmp-buffer
+        cmp-latex-symbols
         cmp_luasnip
         cmp-nvim-lsp
         cmp-path
@@ -100,7 +101,7 @@
         vim-startuptime
         which-key-nvim
 
-        { name = "LuaSnip"; path = luasnip; }
+    { name = "LuaSnip"; path = luasnip; }
     { name = "catppuccin"; path = catppuccin-nvim; }
     { name = "mini.ai"; path = mini-nvim; }
     { name = "mini.bufremove"; path = mini-nvim; }

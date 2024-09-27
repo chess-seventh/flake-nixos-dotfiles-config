@@ -2,15 +2,14 @@
   description = "NixOS config";
 
   inputs = {
-    # Nixpkgs
+# Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
-    # nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    # You can access packages and modules from different nixpkgs revs
-    # at the same time. Here's an working example
+# nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+# You can access packages and modules from different nixpkgs revs
+# at the same time. Here's an working example
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    # Also see the 'unstable-packages' overlay at 'overlays/default.nix'.
-
-    # Home manager
+# Also see the 'unstable-packages' overlay at 'overlays/default.nix'.
+# Home manager
     home-manager = {
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -29,17 +28,17 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    ###
-    # Unstable
-    ###
+###
+# Unstable
+###
 
     hyprland = {
       type = "git";
       url = "https://github.com/hyprwm/hyprland";
-      # rev = "f642fb97df5c69267a03452533de383ff8023570";
+# rev = "f642fb97df5c69267a03452533de383ff8023570";
       submodules = true;
       inputs.nixpkgs.follows = "nixpkgs";
-      # inputs.aquamarine.follows = "aquamarine";
+# inputs.aquamarine.follows = "aquamarine";
     };
 
     hyprwm-contrib = {
@@ -59,9 +58,11 @@
 
     nix-ld = {
       url = "github:Mic92/nix-ld";
-      # this line assume that you also have nixpkgs as an input
+# this line assume that you also have nixpkgs as an input
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    deploy-rs.url = "github:serokell/deploy-rs";
 
   };
 
@@ -72,49 +73,85 @@
     home-manager,
     nix-ld,
     nixpkgs-unstable,
-    ...
-    } @ inputs: let
-      inherit (self) outputs;
-      forEachSystem = nixpkgs.lib.genAttrs ["x86_64-linux"];
-      forEachPkgs = f: forEachSystem (sys: f nixpkgs.legacyPackages.${sys});
-      system = "x86_64-linux";
-      unstablePkgs = nixpkgs-unstable.legacyPackages.${system};
+    # https://github.com/serokell/deploy-rs
+    deploy-rs
+      ...
+  } @ inputs: let
+  inherit (self) outputs;
+  forEachSystem = nixpkgs.lib.genAttrs ["x86_64-linux"];
+  forEachPkgs = f: forEachSystem (sys: f nixpkgs.legacyPackages.${sys});
+  system = "x86_64-linux";
+  unstablePkgs = nixpkgs-unstable.legacyPackages.${system};
 
-      mkNixos = modules:
-        nixpkgs.lib.nixosSystem {
-          inherit modules;
-          specialArgs = {
-            inherit inputs outputs;
-            unstablePkgs = import nixpkgs-unstable {
-              config = {
-                allowUnfree = true;
-              };
-              localSystem = { inherit system; };
-            };
+  mkNixos = modules:
+    nixpkgs.lib.nixosSystem {
+      inherit modules;
+      specialArgs = {
+        inherit inputs outputs;
+        unstablePkgs = import nixpkgs-unstable {
+          config = {
+            allowUnfree = true;
           };
+          localSystem = { inherit system; };
         };
-
-      mkHome = modules: pkgs:
-        home-manager.lib.homeManagerConfiguration {
-          inherit modules pkgs;
-          extraSpecialArgs = {inherit inputs outputs;};
-        };
-    in {
-      # nixosModules = import ./modules/nixos;
-      homeManagerModules = import ./modules/home-manager;
-
-      formatter = forEachPkgs (pkgs: pkgs.alejandra);
-
-      overlays = import ./overlays {inherit inputs outputs;};
-
-      devShells = forEachPkgs (pkgs: import ./shell.nix {inherit pkgs;});
-
-      nixosConfigurations = {
-        upsetter = mkNixos [./hosts/upsetter];
-      };
-
-      homeConfigurations = {
-        "seventh@upsetter" = mkHome [./home-manager/seventh/upsetter.nix] nixpkgs.legacyPackages."x86_64-linux";
       };
     };
+
+  mkHome = modules: pkgs:
+    home-manager.lib.homeManagerConfiguration {
+      inherit modules pkgs;
+      extraSpecialArgs = {inherit inputs outputs;};
+    };
+  in {
+# nixosModules = import ./modules/nixos;
+    homeManagerModules = import ./modules/home-manager;
+
+    formatter = forEachPkgs (pkgs: pkgs.alejandra);
+
+    overlays = import ./overlays {inherit inputs outputs;};
+
+    devShells = forEachPkgs (pkgs: import ./shell.nix {inherit pkgs;});
+
+    nixosConfigurations = {
+      upsetter = mkNixos [./hosts/upsetter];
+
+      # WIP
+      # https://github.com/serokell/deploy-rs
+      nixos-01 = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [ 
+          ./servers/nixos-01/configuration.nix
+          ./servers/shared/
+        ];
+      };
+
+      nixos-02 = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./servers/nixos-02/configuration.nix
+          ./servers/shared/
+        ];
+      };
+
+      nixos-03 = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./servers/nixos-03/configuration.nix
+          ./servers/shared/
+        ];
+      };
+
+      nixos-blackark = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./servers/nixos-blackark/configuration.nix
+          ./servers/shared/
+        ];
+      };
+    };
+
+    homeConfigurations = {
+      "seventh@upsetter" = mkHome [./home-manager/seventh/upsetter.nix] nixpkgs.legacyPackages."x86_64-linux";
+    };
+  };
 }

@@ -66,18 +66,10 @@
 
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    nixos-hardware,
-    home-manager,
-    nix-ld,
-    nixpkgs-unstable,
-    # https://github.com/serokell/deploy-rs
-    deploy-rs
-      ...
-  } @ inputs: let
-  inherit (self) outputs;
+# https://github.com/serokell/deploy-rs
+  outputs = { self, nixpkgs, nixos-hardware, home-manager, nix-ld, nixpkgs-unstable, deploy-rs ... } @ inputs: 
+    let inherit (self) outputs;
+
   forEachSystem = nixpkgs.lib.genAttrs ["x86_64-linux"];
   forEachPkgs = f: forEachSystem (sys: f nixpkgs.legacyPackages.${sys});
   system = "x86_64-linux";
@@ -92,8 +84,8 @@
           config = {
             allowUnfree = true;
           };
-          localSystem = { inherit system; };
         };
+        localSystem = { inherit system; };
       };
     };
 
@@ -115,8 +107,8 @@
     nixosConfigurations = {
       upsetter = mkNixos [./hosts/upsetter];
 
-      # WIP
-      # https://github.com/serokell/deploy-rs
+# WIP
+# https://github.com/serokell/deploy-rs
       nixos-01 = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [ 

@@ -7,23 +7,23 @@ config,
 }: {
   home.packages = with pkgs; [
     bacon
-    cargo
-    cargo-audit
-    cargo-bloat
-    cargo-cross
-    cargo-deny
-    cargo-edit
-    cargo-lambda
-    cargo-license
-    cargo-modules
-    cargo-nextest
-    cargo-outdated
-    cargo-spellcheck
-    cargo-tarpaulin
-    cargo-unused-features
-    cargo-update
-    cargo-watch
-    clippy
+    unstable.cargo
+    unstable.cargo-audit
+    unstable.cargo-bloat
+    unstable.cargo-cross
+    unstable.cargo-deny
+    unstable.cargo-edit
+    unstable.cargo-lambda
+    unstable.cargo-license
+    unstable.cargo-modules
+    unstable.cargo-nextest
+    unstable.cargo-outdated
+    unstable.cargo-spellcheck
+    unstable.cargo-tarpaulin
+    unstable.cargo-unused-features
+    unstable.cargo-update
+    unstable.cargo-watch
+    unstable.clippy
     cmake
     devbox
     diffsitter # Better diff
@@ -31,9 +31,10 @@ config,
     docker
     gcc
     gnumake
-    go
+    unstable.go
     jdk
     jetbrains.pycharm-professional
+    jetbrains-toolbox
     julia
     lua
     luarocks
@@ -46,11 +47,12 @@ config,
     poetry
     python3
     qemu
-    rust-analyzer
-    rustc
+    unstable.rust-analyzer
     teller
+    unstable.rustc
     zig
   ];
+
 }
 
 

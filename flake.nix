@@ -17,7 +17,6 @@
     };
 
     impermanence.url = "github:nix-community/impermanence";
-
     nix-colors = {
       url = "github:misterio77/nix-colors";
     }; 
@@ -28,6 +27,8 @@
       url = "github:nix-community/nixos-generators";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    home-manager-diff.url = "github:pedorich-n/home-manager-diff";
 
     ###
     # Unstable
@@ -72,6 +73,7 @@
     home-manager,
     nix-ld,
     nixpkgs-unstable,
+    home-manager-diff,
     ...
     } @ inputs: let
       inherit (self) outputs;
@@ -98,6 +100,7 @@
         home-manager.lib.homeManagerConfiguration {
           inherit modules pkgs;
           extraSpecialArgs = {inherit inputs outputs;};
+
         };
     in {
       # nixosModules = import ./modules/nixos;
@@ -114,7 +117,10 @@
       };
 
       homeConfigurations = {
-        "seventh@upsetter" = mkHome [./home-manager/seventh/upsetter.nix] nixpkgs.legacyPackages."x86_64-linux";
+        "seventh@upsetter" = mkHome [
+            ./home-manager/seventh/upsetter.nix
+            home-manager-diff.hmModules.default
+        ] nixpkgs.legacyPackages."x86_64-linux";
       };
     };
 }

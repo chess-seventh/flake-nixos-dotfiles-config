@@ -130,6 +130,10 @@ config,
 
 
   ];
+    programs.hmd = {
+      enable = true;
+      runOnSwitch = true; # enabled by default
+    };
 }
 
 

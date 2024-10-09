@@ -11,8 +11,9 @@
     vimdiffAlias = true;
     package = pkgs.unstable.neovim-unwrapped;
 
-    extraPackages = with pkgs; [
+    extraPackages = with pkgs.unstable; [
       alejandra
+      bash-language-server
       black
       cargo
       clang-tools
@@ -22,6 +23,7 @@
       gnumake
       golangci-lint-langserver
       gopls
+      hadolint
       haskell-language-server
       lua-language-server
       markdownlint-cli
@@ -39,6 +41,7 @@
       ruff-lsp
       rust-analyzer
       rustc
+      rustup
       shellcheck
       shfmt
       statix
@@ -206,6 +209,8 @@
             bibtex
             c
             cmake
+            css
+            csv
             diff
             gitattributes
             gitcommit
@@ -213,8 +218,10 @@
             gitignore
             git_rebase
             go
+            gomod
             haskell
             hcl
+            helm
             html
             htmldjango
             http
@@ -227,9 +234,11 @@
             latex
             lua
             make
+            markdown
             muttrc
             nix
             php
+            promql
             puppet
             python
             regex
@@ -239,6 +248,7 @@
             scss
             sql
             ssh_config
+            templ
             terraform
             tmux
             toml

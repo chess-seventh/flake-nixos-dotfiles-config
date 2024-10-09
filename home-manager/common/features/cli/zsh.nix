@@ -45,19 +45,14 @@
     };
 
     envExtra = ''
-      ${lib.fileContents /home/seventh/src/git.sr.ht/chess7th/dotfiles/zsh/git.zsh}
-
-      ${lib.fileContents /home/seventh/src/git.sr.ht/chess7th/dotfiles/zsh/flow.zsh}
-
-      ${lib.fileContents /home/seventh/src/git.sr.ht/chess7th/dotfiles/zsh/kubectl.zsh}
-
-      ${lib.fileContents /home/seventh/src/git.sr.ht/chess7th/dotfiles/zsh/nav.zsh}
-
-      ${lib.fileContents /home/seventh/src/git.sr.ht/chess7th/dotfiles/zsh/pass.zsh}
-
-      ${lib.fileContents /home/seventh/src/git.sr.ht/chess7th/dotfiles/zsh/taskwarrior.zsh}
-
-      ${lib.fileContents /home/seventh/src/git.sr.ht/chess7th/dotfiles/zsh/tmux.zsh}
+      ${lib.fileContents /home/seventh/src/git.sr.ht/chess7th/flake-nixos-config/dotfiles/zsh/git.zsh}
+      ${lib.fileContents /home/seventh/src/git.sr.ht/chess7th/flake-nixos-config/dotfiles/zsh/flow.zsh}
+      ${lib.fileContents /home/seventh/src/git.sr.ht/chess7th/flake-nixos-config/dotfiles/zsh/kubectl.zsh}
+      ${lib.fileContents /home/seventh/src/git.sr.ht/chess7th/flake-nixos-config/dotfiles/zsh/nav.zsh}
+      ${lib.fileContents /home/seventh/src/git.sr.ht/chess7th/flake-nixos-config/dotfiles/zsh/pass.zsh}
+      ${lib.fileContents /home/seventh/src/git.sr.ht/chess7th/flake-nixos-config/dotfiles/zsh/taskwarrior.zsh}
+      ${lib.fileContents /home/seventh/src/git.sr.ht/chess7th/flake-nixos-config/dotfiles/zsh/tmux.zsh}
+      ${lib.fileContents /home/seventh/src/git.sr.ht/chess7th/flake-nixos-config/dotfiles/zsh/alias.zsh}
     '';
 
     initExtra = ''

@@ -1,7 +1,22 @@
-{ ... }:
-
 {
-  virtualisation.docker.enable = true;
+  config,
+  lib,
+  ...
+}: {
+
+  virtualisation.docker = {
+    enable = true;
+    # daemon.settings = {
+    #   insecure-registry = "https://192.168.49.2:5000";
+    # };
+    rootless = {
+      enable = true;
+      setSocketVariable = true;
+    };
+  };
+
+  # Ensure group exists
+  users.groups.docker = {};
 
   services = {
     printing.enable = true;

@@ -23,5 +23,11 @@
 
   programs.zsh.enable = true;
 
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
+
+  virtualisation.multipass.enable = true;
+  # programs.multipass.enable = true;
+
 }
 

@@ -7,6 +7,30 @@ config,
 }: {
   home.packages = with pkgs; [
     bacon
+    cmake
+    devbox
+    diffsitter # Better diff
+    distrobox
+    docker
+    docker-compose
+    gcc
+    gnumake
+    jdk
+    jetbrains.pycharm-professional
+    jetbrains-toolbox
+    julia
+    lua
+    luarocks
+    niv
+    nodejs
+    php
+    pipenv
+    podman
+    podman-tui
+    poetry
+    python3
+    qemu
+    teller
     unstable.cargo
     unstable.cargo-audit
     unstable.cargo-bloat
@@ -24,32 +48,10 @@ config,
     unstable.cargo-update
     unstable.cargo-watch
     unstable.clippy
-    cmake
-    devbox
-    diffsitter # Better diff
-    distrobox
-    docker
-    gcc
-    gnumake
     unstable.go
-    jdk
-    jetbrains.pycharm-professional
-    jetbrains-toolbox
-    julia
-    lua
-    luarocks
-    niv
-    nodejs
-    php
-    pipenv
-    podman
-    podman-tui
-    poetry
-    python3
-    qemu
     unstable.rust-analyzer
-    teller
     unstable.rustc
+    yarn
     zig
   ];
 

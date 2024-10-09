@@ -11,13 +11,20 @@ config,
     aws-sam-cli
     helmfile
     k9s
-    kubectl
+    unstable.kubectl
     opentofu
     pulumi
     pulumictl
     pulumi-esc
+    pulumiPackages.pulumi-language-python
+    python312Packages.pulumi
     terraform
     terragrunt
+    # k3s
+    k3sup
+
+    # kubectl plugins
+    krew 
 
     kubernetes-helm
     (wrapHelm kubernetes-helm {

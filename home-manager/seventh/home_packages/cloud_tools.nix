@@ -7,11 +7,12 @@ config,
 }: {
 
   home.packages = with pkgs; [
+    argo-rollouts
     awscli2
     aws-sam-cli
     helmfile
+    k3sup
     k9s
-    unstable.kubectl
     opentofu
     pulumi
     pulumictl
@@ -20,11 +21,7 @@ config,
     python312Packages.pulumi
     terraform
     terragrunt
-    # k3s
-    k3sup
-
-    # kubectl plugins
-    krew 
+    unstable.kubectl
 
     kubernetes-helm
     (wrapHelm kubernetes-helm {

@@ -15,6 +15,7 @@ config,
     dunst
     feh
     fuzzel
+    galculator
     geeqie
     grim
     hyprcursor

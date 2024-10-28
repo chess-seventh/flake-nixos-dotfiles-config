@@ -1,7 +1,7 @@
 # =========================
 # SH FLOW
 # =========================
-export PATH="${KREW_ROOT:-$HOME}/.krew}/bin:$PATH"
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 alias p='pwd'
 alias grep='grep --color=auto'

@@ -1,5 +1,6 @@
 {pkgs, ...}: {
   imports = [
+    ./avizo.nix
     ./alacritty.nix
     ./hypridle.nix
     ./hyprlock.nix
@@ -15,6 +16,7 @@
     ./wofi.nix
     ./zathura.nix
   ];
+
 
   home.packages = with pkgs; [
     # grim

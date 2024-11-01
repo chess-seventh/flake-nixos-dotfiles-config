@@ -65,6 +65,7 @@ config,
     pandoc
     pass
     pass-git-helper
+    pdftk
     pinentry
     pipes-rs
     pkg-config

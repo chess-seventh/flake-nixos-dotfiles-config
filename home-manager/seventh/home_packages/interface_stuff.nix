@@ -49,6 +49,12 @@ config,
     yubikey-personalization
     zathura
     sublime4
+
+    # Video editing
+    kdenlive
+    openshot-qt
+    shotcut
+    flowblade
   ];
 }
 

@@ -182,36 +182,52 @@
       # Example windowrule v1
       # windowrule = float, ^(kitty)$
       windowrule = [
+        "animation popin, ^(alacritty)$"
+
         "opaque, firefox"
-        "float, imv"
         "opaque, imv"
-        "float, title:(Media viewer)"
         "opaque, title:(Media viewer)"
         "opaque, title:(YouTube Music)"
         "opaque, title:(qutebrowser)"
         "opaque, title:(Slack)"
         "opaque, title:(Spotify)"
         "opaque, telegram"
+        "opaque, mpv"
+        "opaque, swappy"
+
         "opacity 1.0 override, title:(Ferdium)"
         "opacity 1.0 override, title:(Diablo.*)"
         "opacity 0.9 override 0.9 override, title:(.*)(- Youtube)$"
-        "float, mpv"
-        "opaque, mpv"
-        "opaque, swappy"
+
         "center 1, swappy"
         "stayfocused, swappy"
+
         "workspace 2, title:(Firefox)"
         "workspace 2, title:(qutebrowser)"
-        "workspace 7, title:(Slack)"
-        "workspace 8, title:(Spotify)"
-        "workspace 9, title:(Obsidian)"
-        "workspace 10, title:(Ferdium)"
         "workspace 2, rounding:false, decorate:false, gapsin:0, gapsout:0, border:false, decorate:false"
+
+        "workspace 7, title:(Slack)"
+
+        "workspace 8, title:(Spotify)"
         "workspace 8, rounding:false, decorate:false, gapsin:0, gapsout:0, border:false, decorate:false"
+
+        "workspace 9, title:(Obsidian)"
         "workspace 9, rounding:false, decorate:false, gapsin:0, gapsout:0, border:false, decorate:false"
+
+        "workspace 10, title:(Ferdium)"
         "workspace 10, rounding:false, decorate:false, gapsin:0, gapsout:0, border:false, decorate:false"
+
+        "float, mpv"
+        "float, title:(Media viewer)"
+        "float, imv"
         "float, $volume_sidemenu"
         "float, $dropterm"
+        "float, $right_calculator"
+        "float, $files_btm"
+        "float, galculator"
+        "float, class:(galculator), title:(galculator)"
+        "float, thunar"
+        "float, class:(thunar), title:(thunar)"
       ];
 
       # windowrule = size 50% 50%, mpv
@@ -230,6 +246,7 @@
         "$mainMod CTRL, h, movewindow, l"
         "$mainMod CTRL, k, movewindow, u"
         "$mainMod CTRL, j, movewindow, d"
+
         "$mainMod SHIFT, L, resizeactive, 10 0"
         "$mainMod SHIFT, H, resizeactive, -10 0"
         "$mainMod SHIFT, K, resizeactive, 0 -10"
@@ -237,20 +254,13 @@
 
         # toggles the "term" scratchpad visibility
         "$mainMod SHIFT, T, exec, pypr toggle term"
-        # exposes every window temporarily or "jump" to the fucused one
-        "$mainMod SHIFT, B, exec, pypr expose"
+        "$mainMod SHIFT, G, exec, pypr toggle rcalculator"
+        "$mainMod SHIFT, V, exec, pypr toggle volume"
+        "$mainMod SHIFT, B, exec, pypr toggle files"
 
-        # toggle a window from/to the "minimized" special workspace
-        "$mainMod SHIFT, N, exec, pypr toggle_special minimized"
-        # toggle the "minimized" special workspace visibility
-        "$mainMod SHIFT CTRL, N, togglespecialworkspace, minimized"
-
-        "$mainMod CTRL, V, exec, pypr toggle volume"
-        "$mainMod CTRL, M, togglespecialworkspace, minimized"
-        "$mainMod, M, exec, pypr toggle_special minimized"
-
-        "$mainMod CTRL, E, exec, pypr expose"
         "$mainMod, P, exec, wofi --show drun"
+        "$mainMod SHIFT, P, exec, wofi-pass"
+        "$mainMod CTRL, P, exec, wofi-emoji"
 
         "$mainMod, T, exec, alacritty"
         "$mainMod SHIFT, ENTER, exec, alacritty"
@@ -258,15 +268,15 @@
 
         "$mainMod, C, exec, hyprpicker -a"
 
-        "$mainMod SHIFT, C, exec, pypr menu 'Color picker'"
-
         "$mainMod SHIFT, S, exec, sh -c 'mkdir -p ~/Pictures/pics/screenshots/$(date '+%Y/%m/%d')' ; slurp | grim -g - ~/Pictures/pics/screenshots/$(date '+%Y/%m/%d')/sceenshot_$(date '+%H%M%S').png"
 
         "$mainMod CTRL, X, killactive"
         "$mainMod SHIFT, F, togglefloating, "
         "$mainMod CTRL, F, fullscreen, 0"
+
         # dwindle
-        "$mainMod SHIFT, P, pseudo,"
+        # "$mainMod SHIFT, P, pseudo,"
+
         # dwindle
         "$mainMod SHIFT, O, togglesplit,"
         "$mainMod SHIFT CONTROL, Q, exit,"
@@ -289,34 +299,34 @@
 
         # Switch workspaces with mainMod + [0-9]
         "$mainMod, 1, workspace, 1"
-        #  $mainMod, 1, exec, $w1
+        "$mainMod, 1, exec, $w1"
 
         "$mainMod, 2, workspace, 2"
-        #  $mainMod, 2, exec, $w2
+        "$mainMod, 2, exec, $w2"
 
         "$mainMod, 3, workspace, 3"
-        #  $mainMod, 3, exec, $w3
+        "$mainMod, 3, exec, $w3"
 
         "$mainMod, 4, workspace, 4"
-        #  $mainMod, 4, exec, $w4
+        "$mainMod, 4, exec, $w4"
 
         "$mainMod, 5, workspace, 5"
-        #  $mainMod, 5, exec, $w5
+        "$mainMod, 5, exec, $w5"
 
         "$mainMod, 6, workspace, 6"
-        #  $mainMod, 6, exec, $w6
+        "$mainMod, 6, exec, $w6"
 
         "$mainMod, 7, workspace, 7"
-        #  $mainMod, 7, exec, $w7
+        "$mainMod, 7, exec, $w7"
 
         "$mainMod, 8, workspace, 8"
-        #  $mainMod, 8, exec, $w8
+        "$mainMod, 8, exec, $w8"
 
         "$mainMod, 9, workspace, 9"
-        #  $mainMod, 9, exec, $w9
+        "$mainMod, 9, exec, $w9"
 
         "$mainMod, 0, workspace, 10"
-        #  $mainMod, 0, exec, $w0
+        "$mainMod, 10, exec, $w10"
 
         # Move active window to a workspace with mainMod + SHIFT + [0-9]
         "$mainMod SHIFT, 1, movetoworkspace, 1"
@@ -340,8 +350,21 @@
         "$mainMod, E, focusmonitor, DP-6"
       ];
 
-      "$dropterm"  = "^(main_dropterm)$";
-      "$volume_sidemenu" = "^(pavucontrol)$";
+      "$dropterm"         = "^(main_dropterm)$";
+      "$volume_sidemenu"  = "^(pavucontrol)$";
+      "$files_btm"        = "^(thunar)$";
+      "$right_calculator" = "^(galculator)$";
+
+      "$w1"  = "hyprctl hyprpaper wallpaper \",/home/seventh/Pictures/pics/wallpapers/my-gopro/GOPR0166.JPG\"";
+      "$w2"  = "hyprctl hyprpaper wallpaper \",/home/seventh/Pictures/pics/wallpapers/my-gopro/GOPR0203.JPG\"";
+      "$w3"  = "hyprctl hyprpaper wallpaper \",/home/seventh/Pictures/pics/wallpapers/my-gopro/GOPR0206.JPG\"";
+      "$w4"  = "hyprctl hyprpaper wallpaper \",/home/seventh/Pictures/pics/wallpapers/my-gopro/GOPR0215.JPG\"";
+      "$w5"  = "hyprctl hyprpaper wallpaper \",/home/seventh/Pictures/pics/wallpapers/my-gopro/GOPR0256.JPG\"";
+      "$w6"  = "hyprctl hyprpaper wallpaper \",/home/seventh/Pictures/pics/wallpapers/my-gopro/GOPR0253.JPG\"";
+      "$w7"  = "hyprctl hyprpaper wallpaper \",/home/seventh/Pictures/pics/wallpapers/my-gopro/GOPR0271.JPG\"";
+      "$w8"  = "hyprctl hyprpaper wallpaper \",/home/seventh/Pictures/pics/wallpapers/my-gopro/GOPR0276.JPG\"";
+      "$w9"  = "hyprctl hyprpaper wallpaper \",/home/seventh/Pictures/pics/wallpapers/my-gopro/GOPR0417.JPG\"";
+      "$w10" = "hyprctl hyprpaper wallpaper \",/home/seventh/Pictures/pics/wallpapers/my-gopro/GOPR0429.JPG\"";
 
       bindm = [
         "$mainMod, mouse:272, movewindow"

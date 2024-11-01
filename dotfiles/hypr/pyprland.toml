@@ -32,6 +32,17 @@ lazy = true
 margin = 90
 multi = false
 
+[scratchpads.rcalculator]
+command = "galculator"
+animation = "fromRight"
+class = "galculator"
+size = "40% 70%"
+unfocus = "hide"
+excludes = "*"
+lazy = true
+margin = 90
+multi = false
+
 [shortcuts_menu.entries]
 "Color picker" = [
   { name = "format", options = [

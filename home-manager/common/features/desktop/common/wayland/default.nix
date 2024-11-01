@@ -22,8 +22,10 @@
     # pulseaudio
     # slurp
     waypipe
+    wtype
     wf-recorder
     wl-clipboard
+    wofi-emoji
     libsForQt5.kdenlive
     # wl-mirror
     # wl-mirror-pick

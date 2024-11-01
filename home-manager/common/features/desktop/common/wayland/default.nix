@@ -4,11 +4,12 @@
     ./hypridle.nix
     ./avizo.nix
     ./hyprlock.nix
-    ./hyprpaper.nix
+    # ./hyprpaper.nix
     ./imv.nix
     ./obsidian.nix
     ./poweralertd.nix
     ./sway-osd.nix
+    ./wallpaper.nix
     ./waybar.nix
     ./wlogout.nix
     ./wofi.nix

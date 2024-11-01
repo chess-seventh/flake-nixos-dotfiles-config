@@ -53,6 +53,7 @@ config,
     unstable.rustc
     yarn
     zig
+    uv
   ];
 
 }

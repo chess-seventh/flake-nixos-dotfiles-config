@@ -41,12 +41,12 @@
       ploh      = "!git pull origin `git rev-parse --abbrev-ref HEAD` --ff-only";
 
 # # COMMITS
-      com       = "commit";
-      ca        = "commit -a -S --amend";
-      wip       = "commit -a -S --message=WIP";
-      cm        = "commit -m -S";
-      cam       = "commit -am -S";
-      cane      = "commit --amend --no-edit -S";
+      com       = "commit -S";
+      ca        = "commit -S -a --amend";
+      wip       = "commit -S -a --message=WIP";
+      cm        = "commit -S -m";
+      cam       = "commit -S -am";
+      cane      = "commit -S --amend --no-edit";
 
 # # Retrieves last modified files
 # fixup      = !"git status --short | grep '^.[MARCD]' |  sed 's/^.. //' | fzf | xargs -o git add $@  && git log -n 20 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --fixup && git rebase -i --autosquash origin/master";

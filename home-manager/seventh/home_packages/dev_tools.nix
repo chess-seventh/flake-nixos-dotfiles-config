@@ -16,7 +16,7 @@ config,
     gcc
     gnumake
     jdk
-    jetbrains.pycharm-professional
+    # jetbrains.pycharm-professional
     jetbrains-toolbox
     julia
     lua

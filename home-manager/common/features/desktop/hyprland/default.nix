@@ -193,14 +193,19 @@
         "opaque, title:(Spotify)"
         "opaque, telegram"
         "opaque, mpv"
-        "opaque, swappy"
 
         "opacity 1.0 override, title:(Ferdium)"
         "opacity 1.0 override, title:(Diablo.*)"
-        "opacity 0.9 override 0.9 override, title:(.*)(- Youtube)$"
 
-        "center 1, swappy"
-        "stayfocused, swappy"
+        "opacity 1.0 override, class:(Firefox.*)"
+        "opacity 1.0 override, class:(firefox.*)"
+
+        "opacity 1.0 override, class:(Qutebrowser.*)"
+        "opacity 1.0 override, class:(qutebrowser.*)"
+
+        "opacity 1.0 override, class:(jetbrains.*)"
+
+        "opacity 1.0 override 1.0 override, title:(.*)(- Youtube)$"
 
         "workspace 2, title:(Firefox)"
         "workspace 2, title:(qutebrowser)"
@@ -220,27 +225,25 @@
         "float, mpv"
         "float, title:(Media viewer)"
         "float, imv"
+
         "float, $volume_sidemenu"
         "float, $dropterm"
         "float, $right_calculator"
         "float, $files_btm"
+        "float, $toolbox"
+
         "float, galculator"
         "float, class:(galculator), title:(galculator)"
+
         "float, thunar"
         "float, class:(thunar), title:(thunar)"
+
+        "float, jetbrains-toolbox"
+        "float, class:(jetbrains-toolbox), title:(jetbrains-toolbox)"
       ];
 
-      # windowrule = size 50% 50%, mpv
-      # Example windowrule v2
-      # windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
-      # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
-
-
-      # # See https://wiki.hyprland.org/Configuring/Keywords/ for more
       "$mainMod" = "SUPER";
 
-      # MOVE ME
-      #
       bind = [
         "$mainMod CTRL, l, movewindow, r"
         "$mainMod CTRL, h, movewindow, l"
@@ -257,6 +260,7 @@
         "$mainMod SHIFT, G, exec, pypr toggle rcalculator"
         "$mainMod SHIFT, V, exec, pypr toggle volume"
         "$mainMod SHIFT, B, exec, pypr toggle files"
+        "$mainMod SHIFT, N, exec, pypr toggle toolbox"
 
         "$mainMod, P, exec, wofi --show drun"
         "$mainMod SHIFT, P, exec, wofi-pass"
@@ -273,9 +277,6 @@
         "$mainMod CTRL, X, killactive"
         "$mainMod SHIFT, F, togglefloating, "
         "$mainMod CTRL, F, fullscreen, 0"
-
-        # dwindle
-        # "$mainMod SHIFT, P, pseudo,"
 
         # dwindle
         "$mainMod SHIFT, O, togglesplit,"
@@ -299,34 +300,24 @@
 
         # Switch workspaces with mainMod + [0-9]
         "$mainMod, 1, workspace, 1"
-        "$mainMod, 1, exec, $w1"
 
         "$mainMod, 2, workspace, 2"
-        "$mainMod, 2, exec, $w2"
 
         "$mainMod, 3, workspace, 3"
-        "$mainMod, 3, exec, $w3"
 
         "$mainMod, 4, workspace, 4"
-        "$mainMod, 4, exec, $w4"
 
         "$mainMod, 5, workspace, 5"
-        "$mainMod, 5, exec, $w5"
 
         "$mainMod, 6, workspace, 6"
-        "$mainMod, 6, exec, $w6"
 
         "$mainMod, 7, workspace, 7"
-        "$mainMod, 7, exec, $w7"
 
         "$mainMod, 8, workspace, 8"
-        "$mainMod, 8, exec, $w8"
 
         "$mainMod, 9, workspace, 9"
-        "$mainMod, 9, exec, $w9"
 
         "$mainMod, 0, workspace, 10"
-        "$mainMod, 10, exec, $w10"
 
         # Move active window to a workspace with mainMod + SHIFT + [0-9]
         "$mainMod SHIFT, 1, movetoworkspace, 1"
@@ -354,17 +345,7 @@
       "$volume_sidemenu"  = "^(pavucontrol)$";
       "$files_btm"        = "^(thunar)$";
       "$right_calculator" = "^(galculator)$";
-
-      "$w1"  = "hyprctl hyprpaper wallpaper \",/home/seventh/Pictures/pics/wallpapers/my-gopro/GOPR0166.JPG\"";
-      "$w2"  = "hyprctl hyprpaper wallpaper \",/home/seventh/Pictures/pics/wallpapers/my-gopro/GOPR0203.JPG\"";
-      "$w3"  = "hyprctl hyprpaper wallpaper \",/home/seventh/Pictures/pics/wallpapers/my-gopro/GOPR0206.JPG\"";
-      "$w4"  = "hyprctl hyprpaper wallpaper \",/home/seventh/Pictures/pics/wallpapers/my-gopro/GOPR0215.JPG\"";
-      "$w5"  = "hyprctl hyprpaper wallpaper \",/home/seventh/Pictures/pics/wallpapers/my-gopro/GOPR0256.JPG\"";
-      "$w6"  = "hyprctl hyprpaper wallpaper \",/home/seventh/Pictures/pics/wallpapers/my-gopro/GOPR0253.JPG\"";
-      "$w7"  = "hyprctl hyprpaper wallpaper \",/home/seventh/Pictures/pics/wallpapers/my-gopro/GOPR0271.JPG\"";
-      "$w8"  = "hyprctl hyprpaper wallpaper \",/home/seventh/Pictures/pics/wallpapers/my-gopro/GOPR0276.JPG\"";
-      "$w9"  = "hyprctl hyprpaper wallpaper \",/home/seventh/Pictures/pics/wallpapers/my-gopro/GOPR0417.JPG\"";
-      "$w10" = "hyprctl hyprpaper wallpaper \",/home/seventh/Pictures/pics/wallpapers/my-gopro/GOPR0429.JPG\"";
+      "$toolbox"          = "^(jetbrains-toolbox)$";
 
       bindm = [
         "$mainMod, mouse:272, movewindow"

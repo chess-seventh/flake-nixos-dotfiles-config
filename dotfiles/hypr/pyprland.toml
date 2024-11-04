@@ -54,6 +54,17 @@ lazy = true
 margin = 90
 multi = false
 
+[scratchpads.toolbox]
+command = "jetbrains-toolbox"
+animation = "fromRight"
+class = "jetbrains-toolbox"
+size = "40% 70%"
+unfocus = "hide"
+excludes = "*"
+lazy = true
+margin = 90
+multi = false
+
 [shortcuts_menu.entries]
 "Color picker" = [
   { name = "format", options = [

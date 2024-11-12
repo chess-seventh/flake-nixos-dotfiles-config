@@ -48,7 +48,7 @@
 
       # Execute your favorite apps at launch
       # exec-once = "pypr & hyprpaper & waypaper --restore --backend swaybg & ferdium & obsidian & firefox & spotify";
-      exec-once = "pypr & hyprpaper & nm-applet & blueman-applet & hyprpaper & ferdium & firefox & spotify & obsidian";
+      exec-once = "pypr & nm-applet & blueman-applet & hyprpaper & ferdium & firefox & spotify & obsidian";
 
       # Source a file (multi-file configs)
       source = "$HOME/.config/hypr/macchiato.conf";

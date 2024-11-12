@@ -44,6 +44,7 @@ config,
     xdg-desktop-portal-hyprland
     xdg-desktop-portal-wlr
     xfce.thunar
+    xfce.xfconf
     yubikey-manager
     yubikey-manager-qt
     yubikey-personalization

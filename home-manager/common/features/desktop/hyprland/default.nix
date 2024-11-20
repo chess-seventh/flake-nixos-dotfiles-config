@@ -197,6 +197,9 @@
         "opacity 1.0 override, title:(Ferdium)"
         "opacity 1.0 override, title:(Diablo.*)"
 
+        "opacity 1.0 override, class:(Brave.*)"
+        "opacity 1.0 override, class:(brave.*)"
+
         "opacity 1.0 override, class:(Firefox.*)"
         "opacity 1.0 override, class:(firefox.*)"
 

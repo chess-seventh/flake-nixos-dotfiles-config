@@ -41,14 +41,17 @@
       # monitor=",preferred,auto,1.0";
       monitor= [
         "eDP-1,1920x1200,1000x1600,1.0"
-        # "DP-6,3840x1600,0x0,1.0"
+        "DP-7,3840x1600,0x0,1.0"
+        # "HDMI-A-1,1920x1080,0x0,1.0"
+              
       ];
 
       # See https://wiki.hyprland.org/Configuring/Keywords/ for more
 
       # Execute your favorite apps at launch
-      # exec-once = "pypr & hyprpaper & waypaper --restore --backend swaybg & ferdium & obsidian & firefox & spotify";
-      exec-once = "pypr & nm-applet & blueman-applet & hyprpaper & ferdium & firefox & spotify & obsidian";
+      exec-once = "pypr & nm-applet & blueman-applet & hyprpaper";
+      # FULL
+      # exec-once = "pypr & nm-applet & blueman-applet & hyprpaper & ferdium & firefox & spotify & obsidian";
 
       # Source a file (multi-file configs)
       source = "$HOME/.config/hypr/macchiato.conf";
@@ -203,6 +206,9 @@
         "opacity 1.0 override, class:(Firefox.*)"
         "opacity 1.0 override, class:(firefox.*)"
 
+        "opacity 1.0 override, class:(Chromium.*)"
+        "opacity 1.0 override, class:(chromium.*)"
+
         "opacity 1.0 override, class:(Qutebrowser.*)"
         "opacity 1.0 override, class:(qutebrowser.*)"
 
@@ -337,11 +343,14 @@
         # Scroll through existing workspaces with mainMod + scroll
         "$mainMod, mouse_down, workspace, e+1"
         "$mainMod, mouse_up, workspace, e-1"
-        "$mainMod SHIFT, W, movewindow, mon:eDP-1"
-        "$mainMod SHIFT, E, movewindow, mon:DP-6"
 
+        "$mainMod SHIFT, W, movewindow, mon:eDP-1"
+        "$mainMod SHIFT, E, movewindow, mon:DP-7"
+        # "$mainMod SHIFT, E, movewindow, mon:HMDI-A-1"
+  
         "$mainMod, W, focusmonitor, eDP-1"
-        "$mainMod, E, focusmonitor, DP-6"
+        "$mainMod, E, focusmonitor, DP-7"
+        # "$mainMod, E, focusmonitor, HDMI-A-1"
       ];
 
       "$dropterm"         = "^(main_dropterm)$";

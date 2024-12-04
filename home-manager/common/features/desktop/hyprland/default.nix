@@ -41,9 +41,9 @@
       # monitor=",preferred,auto,1.0";
       monitor= [
         "eDP-1,1920x1200,1000x1600,1.0"
-        "DP-7,3840x1600,0x0,1.0"
+        # "DP-7,3840x1600,0x0,1.0"
         # "HDMI-A-1,1920x1080,0x0,1.0"
-              
+
       ];
 
       # See https://wiki.hyprland.org/Configuring/Keywords/ for more
@@ -213,6 +213,9 @@
         "opacity 1.0 override, class:(qutebrowser.*)"
 
         "opacity 1.0 override, class:(jetbrains.*)"
+        "opacity 1.0 override, class:(jetbrains-goland.*)"
+        "opacity 1.0 override, class:(PyCharm.*)"
+        "opacity 1.0 override, class:(RustRover.*)"
 
         "opacity 1.0 override 1.0 override, title:(.*)(- Youtube)$"
 
@@ -345,11 +348,11 @@
         "$mainMod, mouse_up, workspace, e-1"
 
         "$mainMod SHIFT, W, movewindow, mon:eDP-1"
-        "$mainMod SHIFT, E, movewindow, mon:DP-7"
+        # "$mainMod SHIFT, E, movewindow, mon:DP-7"
         # "$mainMod SHIFT, E, movewindow, mon:HMDI-A-1"
   
         "$mainMod, W, focusmonitor, eDP-1"
-        "$mainMod, E, focusmonitor, DP-7"
+        # "$mainMod, E, focusmonitor, DP-7"
         # "$mainMod, E, focusmonitor, HDMI-A-1"
       ];
 

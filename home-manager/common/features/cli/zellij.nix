@@ -3,7 +3,7 @@
 # https://zellij.dev/documentation/keybindings
   programs.zellij = {
     enable = true;
-    enableZshIntegration = true;
+    #enableZshIntegration = true;
     settings = {
       theme = "gruvbox-dark";
     };

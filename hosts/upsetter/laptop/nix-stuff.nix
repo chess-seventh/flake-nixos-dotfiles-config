@@ -9,6 +9,8 @@
         "electron-25.9.0"
       ];
 
+      sandbox = false;
+
       # Allow unfree packages
       allowUnfree = true;
     };

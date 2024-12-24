@@ -51,6 +51,8 @@ config,
     zathura
     sublime4
 
+    unstable.ferdium
+
     # Video editing
     kdenlive
     openshot-qt

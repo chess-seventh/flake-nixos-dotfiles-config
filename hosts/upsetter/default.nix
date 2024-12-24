@@ -16,9 +16,7 @@
       ./laptop/hyprland.nix
       ./laptop/programs.nix
       ./laptop/security.nix
-      ./laptop/unstable-programs.nix
       ./laptop/user.nix
-      # ./laptop/yubikey.nix
     ];
 
   # This value determines the NixOS release from which the default

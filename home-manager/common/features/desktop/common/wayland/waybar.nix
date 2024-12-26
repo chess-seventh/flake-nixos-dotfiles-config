@@ -70,7 +70,7 @@ pkgs,
         };
         "clock#date" = {
           "interval" = 20;
-          "format" = "{:%e %b %Y}";
+          "format" = "{:%a %e %b %Y}";
           "tooltip" = false;
         };
         "cpu" = {

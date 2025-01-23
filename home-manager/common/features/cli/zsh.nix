@@ -9,10 +9,11 @@
     syntaxHighlighting.enable = true;
 
     shellAliases = {
-      la = "eza -lgbma --icons=always";
-      ll = "eza -lgbma --icons=always";
-      ls = "eza -lgbm --icons=always";
-      l = "eza -lgbm --icons=always";
+      la = "eza -lgbm --all --icons=always";
+      ll = "eza -lgbm --icons=always";
+      ls = "eza --icons=always";
+      l = "eza -l --icons=always --git-status";
+
 
       lad = "eza -lgbtmad --icons=always";
       laf = "eza -lgbtmaf --icons=always";
@@ -23,6 +24,8 @@
 
       ga = "git add";
 
+
+      tree = "eza --tree";
       tree2 = "eza --tree --level 2";
       tree3 = "eza --tree --level 3";
 
@@ -42,6 +45,9 @@
       df = "df -h";
 
       emoji = "rofimoji --selector wofi --clipboarder wl-copy -a copy";
+
+      myip = "curl http://ifconfig.me";
+
     };
 
     envExtra = ''

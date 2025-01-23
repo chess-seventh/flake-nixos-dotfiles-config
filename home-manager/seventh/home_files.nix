@@ -9,8 +9,7 @@ config,
   home.file = {
     ".config/hypr/macchiato.conf".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/src/git.sr.ht/chess7th/flake-nixos-config/dotfiles/hypr/macchiato.conf";
     ".config/hypr/pyprland.toml".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/src/git.sr.ht/chess7th/flake-nixos-config/dotfiles/hypr/pyprland.toml";
-
-    # ".config/avizo/config.ini".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/src/git.sr.ht/chess7th/flake-nixos-config/dotfiles/avizo/config.ini";
+# ".config/avizo/config.ini".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/src/git.sr.ht/chess7th/flake-nixos-config/dotfiles/avizo/config.ini";
 
     ".config/lazygit/config.yml".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/src/git.sr.ht/chess7th/flake-nixos-config/dotfiles/lazygit/config.yml";
 
@@ -37,6 +36,9 @@ config,
     ".config/htop/htoprc".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/src/git.sr.ht/chess7th/flake-nixos-config/dotfiles/htop/htoprc";
 
     ".config/btop/btop.conf".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/src/git.sr.ht/chess7th/flake-nixos-config/dotfiles/btop/btop.conf";
+
+    ".config/newsraft/config".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/src/git.sr.ht/chess7th/flake-nixos-config/dotfiles/newsraft/config";
+    ".config/newsraft/feeds".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/src/git.sr.ht/chess7th/flake-nixos-config/dotfiles/newsraft/feeds";
 
   };
 

@@ -49,6 +49,7 @@ config,
     unstable.cargo-watch
     unstable.clippy
     unstable.go
+    unstable.newsraft
     unstable.rust-analyzer
     unstable.rustc
     yarn

@@ -9,6 +9,7 @@ config,
     bacon
     cmake
     devbox
+    devenv
     diffsitter # Better diff
     distrobox
     docker
@@ -51,9 +52,9 @@ config,
     unstable.newsraft
     unstable.rust-analyzer
     unstable.rustc
+    uv
     yarn
     zig
-    uv
   ];
 
 }

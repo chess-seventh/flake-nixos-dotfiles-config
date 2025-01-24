@@ -134,7 +134,8 @@ keybinds clear-defaults=true {
         bind "Alt k" { MoveFocus "up"; }
         bind "Alt l" { MoveFocusOrTab "right"; }
         bind "Alt n" { NewPane; }
-        bind "Alt o" { MoveTab "right"; }
+        bind "Alt tab" { GoToNextTab; }
+        bind "Alt t" { NewTab; }
     }
     shared_except "locked" {
         bind "Ctrl g" { SwitchToMode "locked"; }

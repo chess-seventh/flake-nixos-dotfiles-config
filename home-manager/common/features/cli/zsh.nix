@@ -12,7 +12,8 @@
       la = "eza -lgbm --all --icons=always";
       ll = "eza -lgbm --icons=always";
       ls = "eza --icons=always";
-      l = "eza -l --icons=always --git-status";
+
+      l = "eza -l --icons=always";
 
 
       lad = "eza -lgbtmad --icons=always";

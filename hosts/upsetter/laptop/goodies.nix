@@ -10,8 +10,11 @@
       cantarell-fonts
       font-awesome
       (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" "FiraCode" "DroidSansMono" ]; })
+      # pkgs.nerd-fonts.FantasqueSansMono
+      # pkgs.nerd-fonts.FiraCode
+      # pkgs.nerd-fonts.DroidSansMono
       noto-fonts
-      noto-fonts-cjk
+      noto-fonts-cjk-sans
       noto-fonts-emoji
       ubuntu_font_family
     ];

@@ -29,12 +29,9 @@
 
   programs = {
     gnupg = {
-      # enable = false;
       agent = {
         enable = true;
         enableSSHSupport = true;
-        # enableExtraSocket = true;
-        # enableBrowserSocket = true;
         pinentryPackage = pkgs.pinentry-gnome3;
       };
     };
@@ -42,7 +39,16 @@
 
   # programs.gpg = {
   # };
+  # Enable cron service
 
-
+  # services.cron = {
+  #   enable = true;
+  #   systemCronJobs = [
+  #     "0 * * * *      seventh    python /home/seventh/src/github.com/dunst-timer/dunst-timer.py -d 25m -t '🍅 Pomodoro' -p"
+  #     "30 * * * *      seventh    python /home/seventh/src/github.com/dunst-timer/dunst-timer.py -d 25m -t '🍅 Pomodoro' -p"
+  #     "25 * * * *      seventh    python /home/seventh/src/github.com/dunst-timer/dunst-timer.py -d 5m -t '☕ Break' -p"
+  #     "55 * * * *      seventh    python /home/seventh/src/github.com/dunst-timer/dunst-timer.py -d 5m -t '☕ Break' -p"
+  #   ];
+  # };
 
 }

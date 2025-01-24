@@ -8,7 +8,7 @@
     inheritParentConfig = true;
     configuration = {
       environment.etc."specialisation".text = "gnome";
-      
+
       hardware = { 
         xone.enable = true;
       };
@@ -25,7 +25,7 @@
       services.xserver.displayManager.gdm.enable = lib.mkForce true;
       services.xserver.desktopManager.gnome.enable = lib.mkForce true;
 
-      environment.systemPackages = with pkgs; [gnomeExtensions.appindicator gnome.adwaita-icon-theme];
+      environment.systemPackages = with pkgs; [gnomeExtensions.appindicator pkgs.adwaita-icon-theme];
       services.udev.packages = with pkgs; [gnome.gnome-settings-daemon];
 
       environment.gnome.excludePackages =

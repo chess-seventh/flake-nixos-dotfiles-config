@@ -13,15 +13,15 @@ config,
     helmfile
     k3sup
     k9s
-    opentofu
-    pulumi
-    pulumictl
-    pulumi-esc
-    pulumiPackages.pulumi-language-python
-    python312Packages.pulumi
-    terraform
-    terragrunt
+    # opentofu
+    # pulumi
+    # pulumictl
+    # pulumi-esc
+    # pulumiPackages.pulumi-language-python
+    # terraform
+    # terragrunt
     unstable.kubectl
+    # python312Packages.pulumi
 
     kubernetes-helm
     (wrapHelm kubernetes-helm {

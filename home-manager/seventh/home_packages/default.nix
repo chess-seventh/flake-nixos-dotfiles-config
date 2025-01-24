@@ -6,5 +6,6 @@
     ./dev_tools.nix
     ./shell_ricing.nix
     ./web_tools.nix
+    # ./rusty_commit_saver.nix
   ];
 }

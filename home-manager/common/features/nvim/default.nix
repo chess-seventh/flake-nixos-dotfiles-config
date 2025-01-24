@@ -4,14 +4,18 @@
 
 { lib, pkgs, config, ... }:
 {
+
   home.sessionVariables.EDITOR = "nvim";
+
   programs.neovim = {
     enable = true;
     vimAlias = true;
     vimdiffAlias = true;
-    package = pkgs.unstable.neovim-unwrapped;
+    # package = pkgs.unstable.neovim-unwrapped;
+    package = pkgs.neovim-unwrapped;
 
-    extraPackages = with pkgs.unstable; [
+    # extraPackages = with pkgs.unstable; [
+    extraPackages = with pkgs; [
       alejandra
       bash-language-server
       black

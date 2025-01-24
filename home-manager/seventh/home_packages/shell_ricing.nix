@@ -34,16 +34,18 @@ config,
     git
     git-extras
     git-filter-repo
-    gnome.gnome-keyring
+    gnome-keyring
     gping
     httpie # Better curl
     imagemagick
+    ghostscript
     ipfetch
     jq
     just
     kitty
     kmon
     lazygit
+    libnotify
     libreoffice
     license-generator
     liquidctl
@@ -80,7 +82,7 @@ config,
     # shell
     speedtest-rs
     starfetch
-    taskwarrior
+    taskwarrior3
     tealdeer
     texlive.combined.scheme-full
     tgpt

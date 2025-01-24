@@ -56,8 +56,12 @@
       xkb.variant = "";
 
       # Enable the GNOME Desktop Environment.
-      displayManager.gdm.enable = true;
-      displayManager.lightdm.enable = false;
+      desktopManager.gnome.enable = true;
+
+      displayManager = {
+        gdm.enable = true;
+        lightdm.enable = false;
+      };
     };
 
     fwupd.enable = true;

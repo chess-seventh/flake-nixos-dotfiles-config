@@ -26,14 +26,14 @@
       powerOnBoot = true; # powers up the default Bluetooth controller on boot
     };
 
-    opengl = {
+    graphics = {
       enable = true;
       # package = unstablePkgs.mesa.drivers;
       package = pkgs.mesa.drivers;
-      driSupport = true;
+      # driSupport = true;
       # package32 = unstablePkgs.pkgsi686Linux.mesa.drivers;
       package32 = pkgs.pkgsi686Linux.mesa.drivers;
-      driSupport32Bit = true;
+      enable32Bit = true;
       # extraPackages = with unstablePkgs; [
       extraPackages = with pkgs; [
         intel-media-driver # LIBVA_DRIVER_NAME=iHD

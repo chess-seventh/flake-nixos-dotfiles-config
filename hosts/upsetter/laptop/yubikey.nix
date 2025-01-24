@@ -3,6 +3,8 @@
 {
   services.dbus.packages = [ pkgs.gcr ];
 
+  services.systembus-notify.enable = true;
+
   services.udev.packages = [ pkgs.yubikey-personalization ];
   services.pcscd.enable = true;
 

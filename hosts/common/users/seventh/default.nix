@@ -43,7 +43,7 @@ in {
   home-manager.users.seventh = import ../../../../home-manager/seventh/${config.networking.hostName}.nix;
 
   services.geoclue2.enable = true;
-  services.gnome3.gnome-keyring.enable = true;
+  services.gnome.gnome-keyring.enable = true;
 
   programs.zsh.enable = true;
   programs.nix-ld.enable = true;

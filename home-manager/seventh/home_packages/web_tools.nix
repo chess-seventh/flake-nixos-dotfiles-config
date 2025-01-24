@@ -11,7 +11,7 @@ config,
     spotify
     lutris
     slack
-    firefox
+    # firefox
     protonmail-bridge
     protonvpn-gui
     qutebrowser

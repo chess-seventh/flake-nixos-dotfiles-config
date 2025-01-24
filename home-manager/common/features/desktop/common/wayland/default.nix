@@ -22,6 +22,7 @@
     wtype
     wf-recorder
     wl-clipboard
+    wofi
     wofi-pass
     wofi-emoji
     libsForQt5.kdenlive

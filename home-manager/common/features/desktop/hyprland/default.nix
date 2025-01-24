@@ -65,9 +65,11 @@
       input = {
         kb_layout = "us";
         kb_variant = "";
-        kb_model = "";
         kb_options = "";
-        kb_rules = "";
+
+        # kb_layout = "us,fr";
+        # kb_variant = "us,ch";
+        # kb_options = "grp:win_space_toggle";
 
         follow_mouse = 1;
 
@@ -118,10 +120,10 @@
           passes = 2;
         };
 
-        drop_shadow = "yes";
-        shadow_range = 15;
-        shadow_offset = "0, 0";
-        shadow_render_power = 3;
+        # drop_shadow = "yes";
+        # shadow_range = 15;
+        # shadow_offset = "0, 0";
+        # shadow_render_power = 3;
         # col.shadow = "$teal";
         # col.shadow_inactive = "0xff$baseAlpha";
 
@@ -177,10 +179,12 @@
 
       # Example per-device config
       # See https://wiki.hyprland.org/Configuring/Keywords/#executing for more
-      # device {
-      #     # name = epic mouse V1
-      #     sensitivity = -0.5
-      # }
+      # device = {
+      #     name = "my-keyboard";
+      #     kb_layout = "us,fr";
+      #     kb_variant = "us,ch";
+      #     kb_options = "grp:win_space_toggle";
+      # };
 
       # Example windowrule v1
       # windowrule = float, ^(kitty)$
@@ -193,46 +197,43 @@
         "opaque, title:(YouTube Music)"
         "opaque, title:(qutebrowser)"
         "opaque, title:(Slack)"
+        "workspace 7, title:(Slack)"
+
         "opaque, title:(Spotify)"
+        "workspace 8, title:(Spotify)"
+        "workspace 8, rounding:false, decorate:false, gapsin:0, gapsout:0, border:false, decorate:false"
+
         "opaque, telegram"
         "opaque, mpv"
 
         "opacity 1.0 override, title:(Ferdium)"
+        "workspace 10, title:(Ferdium)"
+        "workspace 10, rounding:false, decorate:false, gapsin:0, gapsout:0, border:false, decorate:false"
+
         "opacity 1.0 override, title:(Diablo.*)"
 
         "opacity 1.0 override, class:(Brave.*)"
         "opacity 1.0 override, class:(brave.*)"
 
         "opacity 1.0 override, class:(Firefox.*)"
+        "workspace 2, title:(Firefox)"
         "opacity 1.0 override, class:(firefox.*)"
 
-        "opacity 1.0 override, class:(Chromium.*)"
-        "opacity 1.0 override, class:(chromium.*)"
+        "opacity 1.0 override, class:(Chromium-browser)"
+        "opacity 1.0 override, title:(.*)(- Chromium)$"
 
         "opacity 1.0 override, class:(Qutebrowser.*)"
         "opacity 1.0 override, class:(qutebrowser.*)"
+        "workspace 2, title:(qutebrowser)"
 
-        "opacity 1.0 override, class:(jetbrains.*)"
-        "opacity 1.0 override, class:(jetbrains-goland.*)"
-        "opacity 1.0 override, class:(PyCharm.*)"
-        "opacity 1.0 override, class:(RustRover.*)"
 
+        "opacity 1.0 override, class:(.*jetbrains-rustrover.*)"
         "opacity 1.0 override 1.0 override, title:(.*)(- Youtube)$"
 
-        "workspace 2, title:(Firefox)"
-        "workspace 2, title:(qutebrowser)"
         "workspace 2, rounding:false, decorate:false, gapsin:0, gapsout:0, border:false, decorate:false"
-
-        "workspace 7, title:(Slack)"
-
-        "workspace 8, title:(Spotify)"
-        "workspace 8, rounding:false, decorate:false, gapsin:0, gapsout:0, border:false, decorate:false"
 
         "workspace 9, title:(Obsidian)"
         "workspace 9, rounding:false, decorate:false, gapsin:0, gapsout:0, border:false, decorate:false"
-
-        "workspace 10, title:(Ferdium)"
-        "workspace 10, rounding:false, decorate:false, gapsin:0, gapsout:0, border:false, decorate:false"
 
         "float, mpv"
         "float, title:(Media viewer)"
@@ -279,6 +280,7 @@
         "$mainMod CTRL, P, exec, wofi-emoji"
 
         "$mainMod, T, exec, alacritty"
+        "$mainMod CTRL, T, exec, xterm"
         "$mainMod SHIFT, ENTER, exec, alacritty"
         "$mainMod SHIFT CTRL, L, exec, hyprlock"
 

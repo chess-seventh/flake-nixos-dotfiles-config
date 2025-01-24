@@ -17,7 +17,7 @@ config,
     gcc
     gnumake
     jdk
-    jetbrains-toolbox
+    # jetbrains-toolbox
     julia
     lua
     luarocks

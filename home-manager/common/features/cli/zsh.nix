@@ -75,7 +75,7 @@
 
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" "aws" "autojump" "direnv" "fzf" "history" "colored-man-pages" "fd" "kubectl" "kubectx" "poetry" "poetry-env" "systemd" "taskwarrior" "tmux" "zsh-interactive-cd" ];
+      plugins = [ "git" "aws" "autojump" "direnv" "fzf" "history" "colored-man-pages" "kubectl" "kubectx" "poetry" "poetry-env" "systemd" "taskwarrior" "tmux" "zsh-interactive-cd" ];
       theme = "agnoster";
     };
 

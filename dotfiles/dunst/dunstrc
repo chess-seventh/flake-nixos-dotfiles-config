@@ -1,7 +1,8 @@
 [global]
-frame_color = "#cad3f5"
-separator_color= frame
-font = "JetBrains Mono Regular 11"
+frame_color = "#89b4fa"
+separator_color = frame
+highlight = "#89b4fa"
+font = "FiraCode Nerd Font Mono 11"
 corner_radius = 10
 offset = 5x5
 origin = top-right
@@ -11,15 +12,23 @@ frame_width = 2
 width = 300
 height = 100
 
+
 [urgency_low]
-background = "#24273A"
-foreground = "#CAD3F5"
+# IMPORTANT: colors have to be defined in quotation marks.
+# Otherwise the "#" and following would be interpreted as a comment.
+frame_color = "#1D918B"
+foreground = "#FFEE79"
+background = "#18191E"
+timeout = 5
 
 [urgency_normal]
-background = "#24273A"
-foreground = "#CAD3F5"
+frame_color = "#D16BB7"
+foreground = "#FFEE79"
+background = "#18191E"
+timeout = 10
 
 [urgency_critical]
-background = "#24273A"
-foreground = "#CAD3F5"
-frame_color = "#F5A97F"
+frame_color = "#FC2929"
+foreground = "#FFFF00"
+background = "#18191E"
+timeout = 10

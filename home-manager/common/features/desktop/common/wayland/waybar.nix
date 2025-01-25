@@ -15,45 +15,107 @@ pkgs,
       primary = {
         "layer" = "top";
         "position" = "top";
+
         "modules-left" = [
-          "hyprland/submap"
           "hyprland/workspaces"
-          "custom/arrow10"
-          "hyprland/window"
+          "custom/right-arrow-dark"
+        ];
+        "modules-center" = [
+          "custom/left-arrow-dark"
+          "clock#1"
+          "custom/left-arrow-light"
+          "custom/left-arrow-dark"
+          "clock#2"
+          "custom/right-arrow-dark"
+          "custom/right-arrow-light"
+          "clock#3"
+          "custom/right-arrow-dark"
         ];
         "modules-right" = [
-          "custom/arrow9"
+          "custom/left-arrow-dark"
           "pulseaudio"
-          "custom/arrow8"
-          "network"
-          "custom/arrow7"
+          "custom/left-arrow-light"
+          "custom/left-arrow-dark"
           "memory"
-          "custom/arrow6"
+          "custom/left-arrow-light"
+          "custom/left-arrow-dark"
           "cpu"
-          "custom/arrow5"
-          "temperature"
-          "custom/arrow4"
+          "custom/left-arrow-light"
+          "custom/left-arrow-dark"
           "battery"
-          "custom/arrow3"
+          "custom/left-arrow-light"
+          "custom/left-arrow-dark"
+          "disk"
+          "custom/left-arrow-light"
+          "custom/left-arrow-dark"
           "tray"
-          "custom/arrow2"
-          "clock#date"
-          "custom/arrow1"
-          "clock#time"
         ];
 
+        "custom/left-arrow-dark" = {
+          "format" = "";
+          "tooltip" = false;
+        };
+        "custom/left-arrow-light" = {
+          "format" = "";
+          "tooltip" = false;
+        };
+        "custom/right-arrow-dark" = {
+          "format" = "";
+          "tooltip" = false;
+        };
+        "custom/right-arrow-light" = {
+          "format" = "";
+          "tooltip" = false;
+        };
+
+        "hyprland/workspaces" = {
+          "disable-scroll" = true;
+          "format" = "{name}";
+        };
+
+        "clock#1" = {
+          "format" = "{:%a}";
+          "tooltip" = false;
+        };
+        "clock#2" = {
+          "format" = "{:%H:%M}";
+          "tooltip" = false;
+        };
+        "clock#3" = {
+          "format" = "{:%m-%d}";
+          "tooltip" = false;
+        };
+
+        "pulseaudio" = {
+          "format" = "{icon} {volume:2}%";
+          "format-bluetooth" = "{icon}  {volume}%";
+          "format-muted" = "MUTE";
+          "format-icons" = {
+            "headphones" = "";
+            "default" = [
+              ""
+              ""
+            ];
+          };
+          "scroll-step" = 5;
+          "on-click" = "pamixer -t";
+          "on-click-right" = "pavucontrol";
+        };
+        "memory" = {
+          "interval" = 5;
+          "format" = "Mem {}%";
+        };
+        "cpu" = {
+          "interval" = 5;
+          "format" = "CPU {usage:2}%";
+        };
         "battery" = {
-          "interval" = 10;
           "states" = {
+            "good" = 95;
             "warning" = 30;
             "critical" = 15;
           };
-          "format-time" = "{H}:{M:02}";
-          "format" = "{icon} {capacity}% ({time})";
-          "format-charging" = " {capacity}% ({time})";
-          "format-charging-full" = " {capacity}%";
-          "format-full" = "{icon} {capacity}%";
-          "format-alt" = "{icon} {power}W";
+          "format" = "{icon} {capacity}%";
           "format-icons" = [
             ""
             ""
@@ -61,142 +123,14 @@ pkgs,
             ""
             ""
           ];
-          "tooltip" = false;
         };
-        "clock#time" = {
-          "interval" = 10;
-          "format" = "{:%H:%M}";
-          "tooltip" = false;
-        };
-        "clock#date" = {
-          "interval" = 20;
-          "format" = "{:%a %e %b %Y}";
-          "tooltip" = false;
-        };
-        "cpu" = {
+        "disk" = {
           "interval" = 5;
-          "tooltip" = false;
-          "format" = " {usage}%";
-          "format-alt" = " {load}";
-          "states" = {
-            "warning" = 70;
-            "critical" = 90;
-          };
-        };
-        "sway/language" = {
-          "format" = " {}";
-          "min-length" = 5;
-          "on-click" = "swaymsg 'input * xkb_switch_layout next'";
-          "tooltip" = false;
-        };
-        "memory" = {
-          "interval" = 5;
-          "format" = " {used:0.1f}G/{total:0.1f}G";
-          "states" = {
-            "warning" = 70;
-            "critical" = 90;
-          };
-          "tooltip" = false;
-        };
-        "network" = {
-          "interval" = 5;
-          "format-wifi" = " {essid} ({signalStrength}%) - {ipaddr}/{cidr}";
-          "format-ethernet" = " {ifname}";
-          "format-disconnected" = "No connection";
-          "format-alt" = " {ipaddr}/{cidr}";
-          "tooltip" = false;
-        };
-        "hyprland/submap" = {
-          "format" = "{}";
-          "tooltip" = false;
-        };
-        "hyprland/window" = {
-          "format" = "{}";
-          "max-length" = 50;
-          "tooltip" = false;
-        };
-        "hyprland/workspaces" = {
-          "disable-scroll-wraparound" = true;
-          "smooth-scrolling-threshold" = 4;
-          "enable-bar-scroll" = true;
-          "format" = "{name}";
-        };
-        "pulseaudio" = {
-          "format" = "{icon} {volume}%";
-          "format-bluetooth" = "{icon} {volume}%";
-          "format-muted" = "";
-          "format-icons" = {
-            "headphone" = "";
-            "hands-free" = "";
-            "headset" = "";
-            "phone" = "";
-            "portable" = "";
-            "car" = "";
-            "default" = [
-              ""
-              ""
-            ];
-          };
-          "scroll-step" = 1;
-          "on-click" = "pactl set-sink-mute @DEFAULT_SINK@ toggle";
-          "tooltip" = false;
-        };
-        "temperature" = {
-          "thermal-zone" = 1;
-          "critical-threshold" = 90;
-          "interval" = 5;
-          "format" = "{icon} {temperatureC}°";
-          "format-icons" = [
-            ""
-            ""
-            ""
-            ""
-            ""
-          ];
-          "tooltip" = false;
+          "format" = "Disk {percentage_used:2}%";
+          "path" = "/";
         };
         "tray" = {
-          "icon-size" = 18;
-        };
-        "custom/arrow1" = {
-          "format" = "";
-          "tooltip" = false;
-        };
-        "custom/arrow2" = {
-          "format" = "";
-          "tooltip" = false;
-        };
-        "custom/arrow3" = {
-          "format" = "";
-          "tooltip" = false;
-        };
-        "custom/arrow4" = {
-          "format" = "";
-          "tooltip" = false;
-        };
-        "custom/arrow5" = {
-          "format" = "";
-          "tooltip" = false;
-        };
-        "custom/arrow6" = {
-          "format" = "";
-          "tooltip" = false;
-        };
-        "custom/arrow7" = {
-          "format" = "";
-          "tooltip" = false;
-        };
-        "custom/arrow8" = {
-          "format" = "";
-          "tooltip" = false;
-        };
-        "custom/arrow9" = {
-          "format" = "";
-          "tooltip" = false;
-        };
-        "custom/arrow10" = {
-          "format" = "";
-          "tooltip" = false;
+          "icon-size" = 20;
         };
       };
     };
@@ -223,278 +157,87 @@ pkgs,
     # base0D: "#7AA2F7"
     # base0E: "#BB9AF7"
     # base0F: "#BB9AF7"
-    style = let
-      inherit (config.colorscheme) palette;
-    in
+    # style = let
+    #   inherit (config.colorscheme) palette;
+    # in
       /*
 css
 */
 
-      ''
-/* Keyframes */
-
-@keyframes blink-critical {
-  to {
-    /*color: @white;*/
-    background-color: @critical;
-  }
-}
-
-
-/* Styles */
-
-/* Colors (gruvbox) */
-@define-color black	#282828;
-@define-color red	#cc241d;
-@define-color green	#98971a;
-@define-color yellow	#d79921;
-@define-color blue	#458588;
-@define-color purple	#b16286;
-@define-color aqua	#689d6a;
-@define-color gray	#a89984;
-@define-color brgray	#928374;
-@define-color brred	#fb4934;
-@define-color brgreen	#b8bb26;
-@define-color bryellow	#fabd2f;
-@define-color brblue	#83a598;
-@define-color brpurple	#d3869b;
-@define-color braqua	#8ec07c;
-@define-color white	#ebdbb2;
-@define-color bg2	#504945;
-
-
-@define-color warning 	@bryellow;
-@define-color critical	@red;
-@define-color mode	@black;
-@define-color unfocused	@bg2;
-@define-color focused	@braqua;
-@define-color inactive	@purple;
-@define-color sound	@brpurple;
-@define-color network	@purple;
-@define-color memory	@braqua;
-@define-color cpu	@green;
-@define-color temp	@brgreen;
-@define-color layout	@bryellow;
-@define-color battery	@aqua;
-@define-color date	@black;
-@define-color time	@white;
-
-/* Reset all styles */
+    style = ''
 * {
-  border: none;
-  border-radius: 0;
-  min-height: 0;
-  margin: 0;
-  padding: 0;
-  box-shadow: none;
-  text-shadow: none;
-  icon-shadow: none;
-}
-
-/* The whole bar */
-#waybar {
-  background: rgba(40, 40, 40, 0.8784313725); /* #282828e0 */
-  color: @white;
+	font-size: 12px;
   font-family: JetBrains Mono, Siji;
-  font-size: 10pt;
-  /*font-weight: bold;*/
 }
 
-/* Each module */
-#battery,
-#clock,
-#cpu,
-#language,
-#memory,
-#mode,
-#network,
+window#waybar {
+	background: #292b2e;
+	color: #fdf6e3;
+}
+
+#custom-right-arrow-dark,
+#custom-left-arrow-dark {
+	color: #1a1a1a;
+}
+#custom-right-arrow-light,
+#custom-left-arrow-light {
+	color: #292b2e;
+	background: #1a1a1a;
+}
+
+#workspaces,
+#clock.1,
+#clock.2,
+#clock.3,
 #pulseaudio,
-#temperature,
-#tray,
-#backlight,
-#idle_inhibitor,
+#memory,
+#cpu,
+#battery,
 #disk,
-#user,
-#mpris {
-  padding-left: 8pt;
-  padding-right: 8pt;
+#tray {
+	background: #1a1a1a;
 }
 
-/* Each critical module */
-#mode,
-#memory.critical,
-#cpu.critical,
-#temperature.critical,
-#battery.critical.discharging {
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-name: blink-critical;
-  animation-duration: 1s;
-}
-
-/* Each warning */
-#network.disconnected,
-#memory.warning,
-#cpu.warning,
-#temperature.warning,
-#battery.warning.discharging {
-  color: @warning;
-}
-
-/* And now modules themselves in their respective order */
-
-/* Current sway mode (resize etc) */
-#mode {
-  color: @white;
-  background: @mode;
-}
-
-/* Workspaces stuff */
 #workspaces button {
-  /*font-weight: bold;*/
-  padding-left: 2pt;
-  padding-right: 2pt;
-  color: @white;
-  background: @unfocused;
+	padding: 0 2px;
+	color: #fdf6e3;
 }
-
-/* Inactive (on unfocused output) */
-#workspaces button.visible {
-  color: @white;
-  background: @inactive;
-}
-
-/* Active (on focused output) */
 #workspaces button.focused {
-  color: @black;
-  background: @focused;
+	color: #268bd2;
 }
-
-/* Contains an urgent window */
-#workspaces button.urgent {
-  color: @black;
-  background: @warning;
-}
-
-/* Style when cursor is on the button */
 #workspaces button:hover {
-  background: @black;
-  color: @white;
+	box-shadow: inherit;
+	text-shadow: inherit;
 }
-
-#window {
-  margin-right: 35pt;
-  margin-left: 35pt;
+#workspaces button:hover {
+	background: #1a1a1a;
+	border: #1a1a1a;
+	padding: 0 3px;
 }
 
 #pulseaudio {
-  background: @sound;
-  color: @black;
+	color: #268bd2;
 }
-
-#network {
-  background: @network;
-  color: @white;
-}
-
 #memory {
-  background: @memory;
-  color: @black;
+	color: #2aa198;
 }
-
 #cpu {
-  background: @cpu;
-  color: @white;
+	color: #6c71c4;
 }
-
-#temperature {
-  background: @temp;
-  color: @black;
-}
-
-#language {
-  background: @layout;
-  color: @black;
-}
-
 #battery {
-  background: @battery;
-  color: @white;
+	color: #859900;
+}
+#disk {
+	color: #b58900;
 }
 
-#tray {
-  background: @layout;
-}
-
-#clock.date {
-  background: @date;
-  color: @white;
-}
-
-#clock.time {
-  background: @time;
-  color: @black;
-}
-
-#custom-arrow1 {
-  font-size: 11pt;
-  color: @time;
-  background: @date;
-}
-
-#custom-arrow2 {
-  font-size: 11pt;
-  color: @date;
-  background: @layout;
-}
-
-#custom-arrow3 {
-  font-size: 11pt;
-  color: @layout;
-  background: @battery;
-}
-
-#custom-arrow4 {
-  font-size: 11pt;
-  color: @battery;
-  background: @temp;
-}
-
-#custom-arrow5 {
-  font-size: 11pt;
-  color: @temp;
-  background: @cpu;
-}
-
-#custom-arrow6 {
-  font-size: 11pt;
-  color: @cpu;
-  background: @memory;
-}
-
-#custom-arrow7 {
-  font-size: 11pt;
-  color: @memory;
-  background: @network;
-}
-
-#custom-arrow8 {
-  font-size: 11pt;
-  color: @network;
-  background: @sound;
-}
-
-#custom-arrow9 {
-  font-size: 11pt;
-  color: @sound;
-  background: transparent;
-}
-
-#custom-arrow10 {
-  font-size: 11pt;
-  color: @unfocused;
-  background: transparent;
+#clock,
+#pulseaudio,
+#memory,
+#cpu,
+#battery,
+#disk {
+	padding: 0 10px;
 }
     '';
   };

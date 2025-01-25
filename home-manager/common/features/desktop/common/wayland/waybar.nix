@@ -166,7 +166,7 @@ css
 
     style = ''
 * {
-	font-size: 12px;
+	font-size: 14px;
   font-family: JetBrains Mono, Siji;
 }
 

@@ -74,7 +74,7 @@ pkgs,
         };
 
         "clock#1" = {
-          "format" = "{:%a}";
+          "format" = "{:%a %d %b}";
           "tooltip" = false;
         };
         "clock#2" = {
@@ -82,7 +82,7 @@ pkgs,
           "tooltip" = false;
         };
         "clock#3" = {
-          "format" = "{:%m-%d}";
+          "format" = "{:%Y}";
           "tooltip" = false;
         };
 

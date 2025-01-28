@@ -1,9 +1,9 @@
 {config, ...}: let
   inherit (config) colorscheme;
 in {
-  home.sessionVariables.COLORTERM = "truecolor";
+  # home.sessionVariables.COLORTERM = "truecolor";
   programs.helix = {
-    enable = false;
+  enable = false;
     settings = {
       theme = "onedarker";
 

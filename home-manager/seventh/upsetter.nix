@@ -27,9 +27,9 @@ config,
     "$HOME/.cargo/bin/"
   ];
 
-  home.sessionVariables = {
-    EDITOR = "nvim";
-  };
+  # home.sessionVariables = {
+  #   EDITOR = "nvim";
+  # };
 
 
   home.packages = with pkgs; [

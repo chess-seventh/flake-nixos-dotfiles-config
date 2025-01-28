@@ -2,7 +2,6 @@ keybinds clear-defaults=true {
     locked {
         bind "Ctrl g" { SwitchToMode "normal"; }
         bind "Alt f" { ToggleFocusFullscreen; }
-        bind "Alt d" { SwitchToMode "rename_session"; RenameSession ; }
     }
     pane {
         bind "left" { MoveFocus "left"; }
@@ -286,7 +285,7 @@ default_shell "zsh"
 // Default: "default"
 // 
 default_layout "compact"
- 
+
 // The folder in which Zellij will look for layouts
 // (Requires restart)
 // 

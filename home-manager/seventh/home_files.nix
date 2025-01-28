@@ -41,6 +41,7 @@ config,
     ".config/newsraft/feeds".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/src/git.sr.ht/chess7th/flake-nixos-config/dotfiles/newsraft/feeds";
 
     ".config/zellij/config.kdl".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/src/git.sr.ht/chess7th/flake-nixos-config/dotfiles/zellij/config.kdl";
+    ".config/zellij/layouts/default.kdl".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/src/git.sr.ht/chess7th/flake-nixos-config/dotfiles/zellij/layouts/default.kdl";
   };
 
 }

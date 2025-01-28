@@ -5,12 +5,11 @@
 { lib, pkgs, config, ... }:
 {
 
-  home.sessionVariables.EDITOR = "nvim";
-
   programs.neovim = {
     enable = true;
     vimAlias = true;
     vimdiffAlias = true;
+    defaultEditor = true;
     # package = pkgs.unstable.neovim-unwrapped;
     package = pkgs.neovim-unwrapped;
 
@@ -60,54 +59,53 @@
 
     plugins = with pkgs.vimPlugins; [
       lazy-nvim
+      LazyVim
+
+      bufferline-nvim
+      cmp-buffer
+      cmp-latex-symbols
+      cmp_luasnip
+      cmp-nvim-lsp
+      cmp-path
+      conform-nvim
+      dashboard-nvim
+      dressing-nvim
+      flash-nvim
+      friendly-snippets
+      gitsigns-nvim
+      indent-blankline-nvim
+      neoconf-nvim
+      neodev-nvim
+      neo-tree-nvim
+      noice-nvim
+      nui-nvim
+      nvim-cmp
+      nvim-lint
+      nvim-lspconfig
+      nvim-notify
+      nvim-spectre
+      nvim-treesitter
+      nvim-treesitter-context
+      nvim-treesitter-textobjects
+      nvim-ts-autotag
+      nvim-ts-context-commentstring
+      nvim-web-devicons
+      persistence-nvim
+      plenary-nvim
+      telescope-fzf-native-nvim
+      telescope-nvim
+      todo-comments-nvim
+      tokyonight-nvim
+      trouble-nvim
+      vim-illuminate
+      vim-startuptime
+      which-key-nvim
     ];
 
     extraLuaConfig =
       let
       plugins = with pkgs.vimPlugins; [
-        LazyVim
-
-        bufferline-nvim
-        cmp-buffer
-        cmp-latex-symbols
-        cmp_luasnip
-        cmp-nvim-lsp
-        cmp-path
-        conform-nvim
-        dashboard-nvim
-        dressing-nvim
-        flash-nvim
-        friendly-snippets
-        gitsigns-nvim
-        indent-blankline-nvim
-        lualine-nvim
-        neoconf-nvim
-        neodev-nvim
-        neo-tree-nvim
-        noice-nvim
-        nui-nvim
-        nvim-cmp
-        nvim-lint
-        nvim-lspconfig
-        nvim-notify
-        nvim-spectre
-        nvim-treesitter
-        nvim-treesitter-context
-        nvim-treesitter-textobjects
-        nvim-ts-autotag
-        nvim-ts-context-commentstring
-        nvim-web-devicons
-        persistence-nvim
-        plenary-nvim
-        telescope-fzf-native-nvim
-        telescope-nvim
-        todo-comments-nvim
-        tokyonight-nvim
-        trouble-nvim
-        vim-illuminate
-        vim-startuptime
-        which-key-nvim
-
+      lualine-nvim
     { name = "LuaSnip"; path = luasnip; }
     { name = "catppuccin"; path = catppuccin-nvim; }
     { name = "mini.ai"; path = mini-nvim; }
@@ -197,7 +195,7 @@
 
           { import = "plugins" },
           -- treesitter handled by xdg.configFile."nvim/parser", put this line at the end of spec to clear ensure_installed
-          { "nvim-treesitter/nvim-treesitter", opts = { ensure_installed = {} } },
+          -- { "nvim-treesitter/nvim-treesitter", opts = { ensure_installed = {} } },
           },
       })
     '';
@@ -267,80 +265,5 @@
     "${parsers}/parser";
 
 # Normal LazyVim config here, see https://github.com/LazyVim/starter/tree/main/lua
-  xdg.configFile."nvim/lua".source = "${config.home.homeDirectory}/src/git.sr.ht/chess7th/flake-nixos-config/home-manager/common/features/nvim/nvim-lua/";
-# ".config/nvim/lua".source = "${config.home.homeDirectory}/src/git.sr.ht/chess7th/flake-nixos-config/home-manager/common/features/nvim/nvim-lua/";
+  xdg.configFile."nvim/lqua".source = "${config.home.homeDirectory}/src/git.sr.ht/chess7th/flake-nixos-config/home-manager/common/features/nvim/nvim-lua/";
 }
-
-
-# {
-# pkgs,
-# ...
-# }: {
-#   home.sessionVariables.EDITOR = "nvim";
-#
-#   programs.neovim = {
-#     enable = true;
-#     vimAlias = true;
-#     vimdiffAlias = true;
-#     package = pkgs.unstable.neovim-unwrapped;
-#     plugins = with pkgs.vimPlugins; [
-#       nvim-treesitter
-#       nvim-treesitter.withAllGrammars
-#       colorizer
-#       nvim-highlight-colors
-#     ];
-#
-#     extraPackages = with pkgs; [
-#       (python3.withPackages (ps: with ps; [
-#         black
-#         flake8
-#       ]))
-#       lua-language-server
-#       ruff-lsp
-#       yaml-language-server
-#       texlab
-#       ansible-language-server
-#       terraform-ls
-#       marksman
-#       shellcheck
-#     ];
-#
-#     extraPython3Packages = (ps: with ps; [
-#       jedi
-#     ]);
-#
-#   };
-#
-#   home.packages = with pkgs; [
-#     alejandra
-#     black
-#     cargo
-#     deadnix
-#     gcc
-#     gnumake
-#     # luajitPackages.luarocks-nix
-#     # lua-language-server
-#     nodejs
-#     php
-#     phpPackages.composer
-#     pyright
-#     python3
-#     ruff
-#     ruff-lsp
-#     rust-analyzer
-#     rustc
-#     shellcheck
-#     shfmt
-#     statix
-#     stylua
-#     texlab
-#     tflint
-#     unzip
-#     yaml-language-server
-#     marksman
-#   ];
-#
-#   # xdg.configFile = {
-#   #   "nvim".source = inputs.neovim-config.outPath;
-#   # };
-# }

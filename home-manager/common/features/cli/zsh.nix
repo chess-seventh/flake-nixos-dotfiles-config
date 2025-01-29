@@ -47,7 +47,7 @@
 
       emoji = "rofimoji --selector wofi --clipboarder wl-copy -a copy";
 
-      myip = "curl http://ifconfig.me";
+      myip = "curl ipinfo.io";
 
     };
 

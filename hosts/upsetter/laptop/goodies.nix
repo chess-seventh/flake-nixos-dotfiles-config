@@ -23,10 +23,20 @@
       defaultFonts = {
         serif = [ "Noto Serif" ];
         sansSerif = [ "Cantarell" ];
-        monospace = [ "Ubuntu Mono" ];
+        monospace = [
+          # "Ubuntu Mono"
+          # "DejaVu Sans Mono"
+          # "DroidSansM Nerd Font Mono"
+          # "FantasqueSansM Nerd Font Mono"
+          # "Fira Mono"
+          # "FreeMono"
+          # "JetBrains Mono"
+          # "Liberation Mono"
+          # "Noto Sans Mono"
+          # "FiraCode Nerd Font Mono"
+        ];
       };
     };
   };
-
 
 }

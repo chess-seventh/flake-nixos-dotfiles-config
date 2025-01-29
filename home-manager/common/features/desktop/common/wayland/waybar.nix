@@ -115,7 +115,7 @@ pkgs,
             "warning" = 30;
             "critical" = 15;
           };
-          "format" = "{icon} {capacity}%";
+          "format" = "{icon} {capacity}% {time}";
           "format-icons" = [
             ""
             ""
@@ -167,12 +167,12 @@ css
     style = ''
 * {
 	font-size: 14px;
-  font-family: JetBrains Mono, Siji;
+  font-family: Iosevka Nerd Font Mono;
 }
 
 window#waybar {
 	background: #292b2e;
-	color: #fdf6e3;
+	color: #89DDFF;
 }
 
 #custom-right-arrow-dark,
@@ -222,13 +222,13 @@ window#waybar {
 	color: #2aa198;
 }
 #cpu {
-	color: #6c71c4;
+	color: #268bd2;
 }
 #battery {
-	color: #859900;
+	color: #2aa198;
 }
 #disk {
-	color: #b58900;
+	color: #268bd2;
 }
 
 #clock,

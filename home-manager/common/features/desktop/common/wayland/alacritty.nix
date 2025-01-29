@@ -9,8 +9,8 @@ in {
     settings = {
       font = {
         normal = {
-          family = "Fira Mono";
-          # family = "Agave Nerd Font";
+          # family = "Iosevka Nerd Font Mono";
+          family = "Inconsolata Nerd Font Mono";
         };
       };
       cursor = {

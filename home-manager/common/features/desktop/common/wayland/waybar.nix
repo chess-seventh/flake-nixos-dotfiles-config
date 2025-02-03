@@ -87,11 +87,16 @@ pkgs,
         };
 
         "pulseaudio" = {
-          "format" = "{icon} {volume:2}%";
-          "format-bluetooth" = "{icon}  {volume}%";
-          "format-muted" = "MUTE";
+          "format" = "{icon} {volume}%";
+          "format-bluetooth" = "{icon} {volume}%";
+          "format-muted" = "";
           "format-icons" = {
             "headphones" = "";
+            "hands-free" = "";
+            "headset" = "";
+            "phone" = "";
+            "portable" = "";
+            "car" = "";
             "default" = [
               ""
               ""
@@ -103,86 +108,71 @@ pkgs,
         };
         "memory" = {
           "interval" = 5;
-          "format" = "Mem {}%";
+          "format" = " {used:0.1f}G/{total:0.1f}G";
+          "states" = {
+            "warning" = 70;
+            "critical" = 90;
+          };
+          "tooltip" = false;
         };
         "cpu" = {
           "interval" = 5;
-          "format" = "CPU {usage:2}%";
-        };
-        "battery" = {
+          "format" = " {usage}%";
+          "format-alt" = " {load}";
           "states" = {
-            "good" = 95;
-            "warning" = 30;
-            "critical" = 15;
+            "warning" = 70;
+            "critical" = 90;
           };
-          "format" = "{icon} {capacity}% {time}";
-          "format-icons" = [
-            ""
-            ""
-            ""
-            ""
-            ""
-          ];
-        };
-        "disk" = {
-          "interval" = 5;
-          "format" = "Disk {percentage_used:2}%";
-          "path" = "/";
-        };
-        "tray" = {
-          "icon-size" = 20;
+          "battery" = {
+            "states" = {
+              "good" = 95;
+              "warning" = 30;
+              "critical" = 15;
+            };
+            "format-time" = "{H}:{M:02}";
+            "format" = "{icon} {capacity}% ({time})";
+            "format-charging" = " {capacity} % ({time})";
+            "format-charging-full" = " {capacity}%";
+            "format-full" = "{icon} {capacity} %";
+            "format-alt" = "{icon} {power} W";
+            "format-icons" = [
+              ""
+              ""
+              ""
+              ""
+              ""
+            ];
+          };
+          "disk" = {
+            "interval" = 5;
+            "format" = "Disk: {percentage_used:2}%";
+            "path" = "/";
+          };
+          "tray" = {
+            "icon-size" = 20;
+          };
         };
       };
     };
 
-    # Cheatsheet:
-    # x -> all sides
-    # x y -> vertical; horizontal
-    # x y z -> top, horizontal, bottom
-    # w x y z -> top, right, bottom, left
-
-    # base00: "#171D23"
-    # base01: "#1D252C"
-    # base02: "#28323A"
-    # base03: "#526270"
-    # base04: "#B7C5D3"
-    # base05: "#D8E2EC"
-    # base06: "#F6F6F8"
-    # base07: "#FBFBFD"
-    # base08: "#F7768E"
-    # base09: "#FF9E64"
-    # base0A: "#B7C5D3"
-    # base0B: "#9ECE6A"
-    # base0C: "#89DDFF"
-    # base0D: "#7AA2F7"
-    # base0E: "#BB9AF7"
-    # base0F: "#BB9AF7"
-    # style = let
-    #   inherit (config.colorscheme) palette;
-    # in
-      /*
-css
-*/
-
-    style = ''
+      style = ''
 * {
-	font-size: 14px;
-  font-family: Iosevka Nerd Font Mono;
+  font-size: 13px;
+  font-family: Inconsolata Nerd Font Mono;
 }
 
 window#waybar {
-	background: #292b2e;
-	color: #89DDFF;
+  background: #292b2e;
+  color: #89DDFF;
 }
 
-#custom-right-arrow-dark,
-#custom-left-arrow-dark {
-	color: #1a1a1a;
+#custom-right-arrow-dark, #custom-left-arrow-dark {
+  color: #2a1a1a;
 }
-#custom-right-arrow-light,
-#custom-left-arrow-light {
-	color: #292b2e;
-	background: #1a1a1a;
+
+#custom-right-arrow-light, #custom-left-arrow-light {
+  color: #292b2e;
+  background: #1a1a1a;
 }
 
 #workspaces,
@@ -195,40 +185,47 @@ window#waybar {
 #battery,
 #disk,
 #tray {
-	background: #1a1a1a;
+  background: #1a1a1a;
 }
 
 #workspaces button {
-	padding: 0 2px;
-	color: #fdf6e3;
+  padding: 0 2px;
+  color: #fdf6e3;
 }
+
 #workspaces button.focused {
-	color: #268bd2;
+  color: #89DDFF;
 }
+
 #workspaces button:hover {
-	box-shadow: inherit;
-	text-shadow: inherit;
+  box-shadow: inherit;
+  text-shadow: inherit;
 }
+
 #workspaces button:hover {
-	background: #1a1a1a;
-	border: #1a1a1a;
-	padding: 0 3px;
+  background: #1a1a1a;
+  border: #1a1a1a;
+  padding: 0 3px;
 }
 
 #pulseaudio {
-	color: #268bd2;
+  color: #268bd2;
 }
+
 #memory {
-	color: #2aa198;
+  color: #89DDFF;
 }
+
 #cpu {
-	color: #268bd2;
+  color: #268bd2;
 }
+
 #battery {
-	color: #2aa198;
+  color: #89DDFF;
 }
+
 #disk {
-	color: #268bd2;
+  color: #268bd2;
 }
 
 #clock,
@@ -237,8 +234,8 @@ window#waybar {
 #cpu,
 #battery,
 #disk {
-	padding: 0 10px;
+  padding: 0 10px;
 }
-    '';
+      '';
   };
 }

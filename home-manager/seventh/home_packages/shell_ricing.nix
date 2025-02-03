@@ -31,6 +31,7 @@ config,
     fortune
     fzf
     gh
+    ghostscript
     git
     git-extras
     git-filter-repo
@@ -38,7 +39,6 @@ config,
     gping
     httpie # Better curl
     imagemagick
-    ghostscript
     ipfetch
     jq
     just
@@ -80,6 +80,7 @@ config,
     rsclock
     sd
     # shell
+    silver-searcher
     speedtest-rs
     starfetch
     taskwarrior3

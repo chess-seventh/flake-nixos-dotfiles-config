@@ -2,7 +2,7 @@
 frame_color = "#89b4fa"
 separator_color = frame
 highlight = "#89b4fa"
-font = "FiraCode Nerd Font Mono 11"
+font = "Iosevka Nerd Font Mono 10"
 corner_radius = 10
 offset = 5x5
 origin = top-right

@@ -89,28 +89,13 @@ fh() {
   print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed -E 's/ *[0-9]*\*? *//' | sed -E 's/\\/\\\\/g')
 }
 
-# aa() {
-#     local alias_file="$HOME/.zsh/alias.zsh"
-#
-#     # Read the aliases from the file and extract the alias names
-#     # Use fzf to select an alias with a preview
-#     local selected_alias=$(cat "$alias_file" | sed -n -e "s/^alias \([^=]*\)=.*/\1/p" | fzf --ansi --preview "grep -oE 'alias {}=.+' \"$alias_file\" | sed 's/^.*=//g' | tr -d \' " --preview-window=down:1:wrap)
-#
-#     if [ -n "$selected_alias" ]; then
-#         eval $selected_alias
-#     fi
-# }
+vg() {
+  local file
 
-# gpt_preview_functions() {
-#   local zsh_dir="$HOME/.zsh/"
-#
-#   # Find all .zsh files in the ~/.zsh/ directory and extract function names
-#   local function_names=$(grep -hE "[^(]+ *\(\)" "$zsh_dir"*.zsh | sed -E -n 's/function ([^(]+) *\(\)/\1/p')
-#
-#   # Use fzf to select a function with a preview of its content
-#   local selected_function=$(echo "$function_names" | fzf --ansi --preview "cat $zsh_dir{}.zsh" --preview-window=up:2:wrap)
-#
-#   if [ -n "$selected_function" ]; then
-#     echo "Selected function: $selected_function"
-#   fi
-# }
+  file="$(ag --nobreak --noheading $@ | fzf -0 -1 | awk -F: '{print $1}')"
+
+  if [[ -n $file ]]
+  then
+     vim $file
+  fi
+}

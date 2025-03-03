@@ -36,4 +36,95 @@
 
   };
 
+  services.rpcbind.enable = true; # needed for NFS
+
+  fileSystems."/home/seventh/mnt/media" = {
+    device = "100.122.160.144:/volume1/media";
+    fsType = "nfs";
+    options = [ "x-systemd.automount" "noauto" ];
+  };
+
+  fileSystems."/home/seventh/mnt/music" = {
+    device = "100.122.160.144:/volume1/music";
+    fsType = "nfs";
+    options = [ "x-systemd.automount" "noauto" ];
+  };
+
+  fileSystems."/home/seventh/mnt/books" = {
+    device = "100.122.160.144:/volume1/books";
+    fsType = "nfs";
+    options = [ "x-systemd.automount" "noauto" ];
+  };
+
+  fileSystems."/home/seventh/mnt/lab" = {
+    device = "100.122.160.144:/volume1/lab";
+    fsType = "nfs";
+    options = [ "x-systemd.automount" "noauto" ];
+  };
+
+  fileSystems."/home/seventh/mnt/backups" = {
+    device = "100.122.160.144:/volume1/backups";
+    fsType = "nfs";
+    options = [ "x-systemd.automount" "noauto" ];
+  };
+
+
+  # systemd.mounts = let commonMountOptions = {
+  #   type = "nfs";
+  #
+  #   after = [ "tailscale-autoconnect.service" ];
+  #   wants = [ "tailscale-autoconnect.service" ];
+  #
+  #   mountConfig = {
+  #     Options = "noatime";
+  #   };
+  # };
+  #
+  # in
+  #
+  # [
+  #   (commonMountOptions // {
+  #     what = "100.122.160.144:/volume1/media";
+  #     where = "/home/seventh/mnt/media";
+  #   })
+  #
+  #   (commonMountOptions // {
+  #     what = "100.122.160.144:/volume1/music";
+  #     where = "/home/seventh/mnt/music";
+  #   })
+  #
+  #   (commonMountOptions // {
+  #     what = "100.122.160.144:/volume1/books";
+  #     where = "/home/seventh/mnt/books";
+  #   })
+  #
+  #   (commonMountOptions // {
+  #     what = "100.122.160.144:/volume1/lab";
+  #     where = "/home/seventh/mnt/lab";
+  #   })
+  #
+  #   (commonMountOptions // {
+  #     what = "100.122.160.144:/volume1/backups";
+  #     where = "/home/seventh/mnt/backups";
+  #   })
+  #
+  # ];
+  #
+  # systemd.automounts = let commonAutoMountOptions = {
+  #   wantedBy = [ "multi-user.target" ];
+  #   automountConfig = {
+  #     TimeoutIdleSec = "60";
+  #   };
+  # };
+  #
+  # in
+  #
+  # [
+  #   (commonAutoMountOptions // { where = "/home/seventh/mnt/media"; })
+  #   (commonAutoMountOptions // { where = "/home/seventh/mnt/music"; })
+  #   (commonAutoMountOptions // { where = "/home/seventh/mnt/books"; })
+  #   (commonAutoMountOptions // { where = "/home/seventh/mnt/lab"; })
+  #   (commonAutoMountOptions // { where = "/home/seventh/mnt/backups"; })
+  # ];
+
 }

@@ -144,6 +144,7 @@
           },
           spec = {
             { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+            { 'wakatime/vim-wakatime', lazy = false },
 
             -- { import = "lazyvim.plugins.extras.coding.copilot" },
             { import = "lazyvim.plugins.extras.coding.mini-comment" },

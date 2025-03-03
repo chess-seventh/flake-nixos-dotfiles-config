@@ -41,7 +41,13 @@
       # monitor=",preferred,auto,1.0";
       monitor= [
         "eDP-1,1920x1200,1000x1600,1.0"
-        # "DP-7,3840x1600,0x0,1.0"
+        "DP-1,3840x1600,0x0,1.0"
+        "DP-2,3840x1600,0x0,1.0"
+        "DP-3,3840x1600,0x0,1.0"
+        "DP-4,3840x1600,0x0,1.0"
+        "DP-5,3840x1600,0x0,1.0"
+        "DP-6,3840x1600,0x0,1.0"
+        "DP-7,3840x1600,0x0,1.0"
         # "HDMI-A-1,1920x1080,0x0,1.0"
 
       ];
@@ -350,11 +356,23 @@
         "$mainMod, mouse_up, workspace, e-1"
 
         "$mainMod SHIFT, W, movewindow, mon:eDP-1"
-        # "$mainMod SHIFT, E, movewindow, mon:DP-7"
+        "$mainMod SHIFT, E, movewindow, mon:DP-1"
+        "$mainMod SHIFT, E, movewindow, mon:DP-2"
+        "$mainMod SHIFT, E, movewindow, mon:DP-3"
+        "$mainMod SHIFT, E, movewindow, mon:DP-4"
+        "$mainMod SHIFT, E, movewindow, mon:DP-5"
+        "$mainMod SHIFT, E, movewindow, mon:DP-6"
+        "$mainMod SHIFT, E, movewindow, mon:DP-7"
         # "$mainMod SHIFT, E, movewindow, mon:HMDI-A-1"
   
         "$mainMod, W, focusmonitor, eDP-1"
-        # "$mainMod, E, focusmonitor, DP-7"
+        "$mainMod, E, focusmonitor, DP-1"
+        "$mainMod, E, focusmonitor, DP-2"
+        "$mainMod, E, focusmonitor, DP-3"
+        "$mainMod, E, focusmonitor, DP-4"
+        "$mainMod, E, focusmonitor, DP-5"
+        "$mainMod, E, focusmonitor, DP-6"
+        "$mainMod, E, focusmonitor, DP-7"
         # "$mainMod, E, focusmonitor, HDMI-A-1"
       ];
 

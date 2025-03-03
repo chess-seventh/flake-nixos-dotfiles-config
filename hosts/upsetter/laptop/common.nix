@@ -14,6 +14,7 @@
     bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
     pulseaudio.enable = false;
     cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+    keyboard.zsa.enable = true;
   };
 
 }

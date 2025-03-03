@@ -28,8 +28,6 @@ export PATH="$HOME/.gloo/bin:$PATH"
 export PATH="$HOME/.krew/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.nix-profile/bin:$PATH"
-export PATH="/var/lib/snapd/snap/bin:$PATH"
-export PATH="/home/seventh/WorkDownloads/pycharm/pycharm-2023.3.1/bin:$PATH"
 
 export npm_config_prefix=$HOME/.node_modules
 

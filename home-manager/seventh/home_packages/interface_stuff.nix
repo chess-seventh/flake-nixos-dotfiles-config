@@ -23,6 +23,7 @@ config,
     hyprpaper
     hyprpicker
     imv
+    keymapp
     mpv
     numix-icon-theme-circle
     obsidian
@@ -34,6 +35,7 @@ config,
     rofimoji
     slurp
     starship
+    sublime4
     sway
     swaybg
     waypaper
@@ -49,7 +51,7 @@ config,
     yubikey-manager-qt
     yubikey-personalization
     zathura
-    sublime4
+    zoom-us
 
     unstable.ferdium
 

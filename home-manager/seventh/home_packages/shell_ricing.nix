@@ -6,6 +6,7 @@ config,
 ...
 }: {
   home.packages = with pkgs; [
+
     alacritty
     aria
     autojump
@@ -49,6 +50,7 @@ config,
     libreoffice
     license-generator
     liquidctl
+    lolcat
     lsd
     lsof
     mcfly
@@ -98,6 +100,7 @@ config,
     unzip
     upx
     viu
+    wakatime
     wget
     wofi
     wrk2
@@ -105,7 +108,6 @@ config,
     yq
     zellij
     zfxtop
-    zoom-us
     zoxide
     zsh-bd
     zsh-completions

@@ -17,7 +17,7 @@ config,
     gcc
     gnumake
     jdk
-    # jetbrains-toolbox
+    jetbrains-toolbox
     julia
     lua
     luarocks
@@ -41,6 +41,7 @@ config,
     unstable.cargo-license
     unstable.cargo-modules
     unstable.cargo-nextest
+    unstable.cargo-llvm-cov
     unstable.cargo-outdated
     unstable.cargo-spellcheck
     unstable.cargo-tarpaulin

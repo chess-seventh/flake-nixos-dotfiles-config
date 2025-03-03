@@ -6,19 +6,16 @@
 {
   imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
-  #   camera not working - seems a problem with latest kernel
-  # hardware.ipu6.enable = true;
-  # hardware.ipu6.platform = "ipu6ep";
-
   hardware = {
-  
     enableAllFirmware = true;
     acpilight.enable = true;
 
+    ## Result is the same with any of the 3 platforms.
     ipu6 = {
-      enable = false;
-      # platform = "ipu6epmtl";
-      platform = "ipu6ep";
+      enable = true;
+      platform = "ipu6epmtl";
+      # platform = "ipu6ep";
+      # platform = "ipu6";
     };
 
     bluetooth = {
@@ -62,8 +59,25 @@
       kernelModules = [ "xe" ];
     };
 
-    kernelPackages = pkgs.linuxPackages_latest;
+    # kernelPackages = pkgs.linuxPackages_latest;
     # kernelPackages = pkgs.linuxKernel.packages.linux_6_9;
+
+    kernelPackages = pkgs.linuxPackages_latest.extend ( self: super: {
+      ipu6-drivers = super.ipu6-drivers.overrideAttrs (
+          final: previous: rec {
+            src = builtins.fetchGit {
+              url = "https://github.com/intel/ipu6-drivers.git";
+              ref = "master";
+              rev = "b4ba63df5922150ec14ef7f202b3589896e0301a";
+            };
+            patches = [
+              "${src}/patches/0001-v6.10-IPU6-headers-used-by-PSYS.patch"
+            ] ;
+          }
+      );
+    } );
+
+
     kernelModules = [ "kvm-intel" ];
     extraModulePackages = [ ];
 

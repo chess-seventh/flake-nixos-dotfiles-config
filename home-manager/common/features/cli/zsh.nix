@@ -49,6 +49,19 @@
 
       myip = "curl ipinfo.io";
 
+      # WORK SIGNICAT
+      # NO
+      ssh_az-carefour = "if [[ $(netbird status --json | jq '.management.connected , .signal.connected ' -r | sort -u) == 'true' ]] ; then ssh -i ~/.ssh/id_ecdsa frapiv@100.124.17.144 ; else ; sudo tailscale down ; netbird up ; ssh -i ~/.ssh/id_ecdsa frapiv@100.124.17.144 ; fi";
+
+      # YES
+      ssh_aws-lince = "ssh -i ~/.ssh/id_ecdsa  frapiv@18.200.244.186";
+      ssh_dev-staging = "ssh -i ~/.ssh/id_ecdsa  frapiv@52.209.4.175";
+
+      ssh_az-santander = "if [[ $(netbird status --json | jq '.management.connected , .signal.connected ' -r | sort -u) == 'true' ]] ; then ssh -i ~/.ssh/id_ecdsa frapiv@10.34.8.241 ; else ; sudo tailscale down ; netbird up ; ssh -i ~/.ssh/id_ecdsa frapiv@10.34.8.241 ; fi";
+      ssh_az-m1 = "if [[ $(netbird status --json | jq '.management.connected , .signal.connected ' -r | sort -u) == 'true' ]] ; then ssh -i ~/.ssh/id_ecdsa frapiv@10.241.0.5 ; else ; sudo tailscale down ; netbird up ; ssh -i ~/.ssh/id_ecdsa frapiv@10.241.0.5 ; fi";
+      ssh_aws-live = "if [[ $(netbird status --json | jq '.management.connected , .signal.connected ' -r | sort -u) == 'true' ]] ; then ssh -i ~/.ssh/id_ecdsa frapiv@10.4.185.97 ; else ; sudo tailscale down ; netbird up ; ssh -i ~/.ssh/id_ecdsa frapiv@10.4.185.97 ; fi";
+      ssh_todoencloud = "if [[ $(netbird status --json | jq '.management.connected , .signal.connected ' -r | sort -u) == 'true' ]] ; then ssh -i ~/.ssh/id_ecdsa frapiv@10.226.2.18 ; else ; sudo tailscale down ; netbird up ; ssh -i ~/.ssh/id_ecdsa frapiv@10.226.2.18 ; fi";
+
     };
 
     envExtra = ''

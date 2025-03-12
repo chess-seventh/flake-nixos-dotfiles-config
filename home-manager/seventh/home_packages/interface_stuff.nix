@@ -38,6 +38,7 @@ config,
     sublime4
     sway
     swaybg
+    warp-terminal
     waypaper
     wdisplays
     wl-clipboard
@@ -53,6 +54,7 @@ config,
     zathura
     zoom-us
 
+
     unstable.ferdium
 
     # Video editing
@@ -60,6 +62,9 @@ config,
     openshot-qt
     shotcut
     flowblade
+
+    ## work
+    teams-for-linux
   ];
 }
 

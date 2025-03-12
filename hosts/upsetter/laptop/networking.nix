@@ -27,6 +27,34 @@
 
       "bullwackies"     = [ "100.122.160.144" "bullwackies.caracara-palermo.ts.net" ];
       "100.122.160.144" = [ "bullwackies"     "bullwackies.caracara-palermo.ts.net" ];
+
+      ## WORK SIGNICAT
+      "10.33.152.4"  = [ "bastion.interne.tessi-techno.fr" ];
+      "10.55.3.200"  = [ "vcenter.eid.local" ];
+
+      "10.55.16.246" = [ "rct2-eid-s3.kemp.tessi-techno.fr" ];
+
+      "10.55.255.14" = [ 
+        "heb-expiredpwd.interne.tessi-techno.fr"
+        "tt-expiredpwd.interne.tessi-techno.fr" ];
+
+      "10.55.255.60" = [ "scal-eid-tessi-sesamvitale.interne.tessi-techno.fr" ];
+
+      "10.55.255.61" = [ "rct2-eid-tessi-sesamvitale.interne.tessi-techno.fr"
+        "rct-eid-tessi-sesamvitale.interne.tessi-techno.fr"
+        "rct-eid-longhorn-tessi-sesamvitale.interne.tessi-techno.fr"
+        "rct2-eid-longhorn-tessi-sesamvitale.interne.tessi-techno.fr"
+        "s3-dev-eid-tessi-sesamvitale.interne.tessi-techno.fr"
+        "rct-orchestrateur-tessi-sesamvitale.interne.tessi-techno.fr"
+        "rct2-orchestrateur-tessi-sesamvitale.interne.tessi-techno.fr" ];
+
+      "10.55.255.62" = [ "eid-tessi-sesamvitale.interne.tessi-techno.fr"
+        "eid-longhorn-tessi-sesamvitale.interne.tessi-techno.fr"
+        "heb-expiredpwd-eid.interne.tessi-techno.fr"
+        "eid-longhorn-tessi-qes.interne.tessi-techno.fr" ];
+
+      "10.90.90.254" = [ "hotspot.wiserve.fr/hotspot.php" ];
+
     };
 
     stevenblack = {

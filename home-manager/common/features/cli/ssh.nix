@@ -8,6 +8,14 @@
 in {
   programs.ssh = {
     enable = true;
+    matchBlocks = {
+      "work" = {
+        hostname = "gitlab.com";
+        user = "git";
+        identityFile = "/home/seventh/.ssh/id_ecdsa";
+      };
+
+    };
     # matchBlocks = {
     #   net = {
     #     host = builtins.concatStringsSep " " hostnames;

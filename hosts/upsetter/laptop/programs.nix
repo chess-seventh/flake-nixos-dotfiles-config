@@ -1,4 +1,4 @@
-{ pkgs, ...}:
+{ pkgs, unstablePkgs, ...}:
 
 {
   environment.systemPackages = with pkgs; [
@@ -19,6 +19,10 @@
     unzip
     wget
     zsh
+
+    # WORK SIGNICAT
+    unstablePkgs.netbird
+    unstablePkgs.netbird-ui
   ];
 
   programs.zsh.enable = true;
@@ -28,6 +32,11 @@
 
   virtualisation.multipass.enable = true;
   # programs.multipass.enable = true;
+
+  services.netbird = {
+    enable = true;
+    # ui.enable = true;
+  };
 
 }
 

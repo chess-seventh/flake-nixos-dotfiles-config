@@ -23,6 +23,22 @@
       };
     };
 
+    extraConfig = {
+      # extremely important, otherwise git will attempt to guess a default user identity. see `man git-config` for more details
+      user.useConfigOnly = true;
+
+      # the `work` identity
+      user.signicat.name = "Francesco Piva";
+      user.signicat.email = "frapiv@signicat.com";
+      user.signicat.signingkey = "24A36F7AE90207E892122C6A196DE4B1C466C207";
+
+      # the `personal` identity
+      user.personal.name = "Chess Seventh";
+      user.personal.email = "chess7th@pm.me";
+      user.personal.signingkey = "DBC4A6C7DF1A29A18558D2B3A7D05D40C1C0C0F4";
+      # I think spider-man might be peter parker! somebody get j jonah jameson on the line
+    };
+
     aliases = {
 # current working tree status using the short format
       s  = "status";

@@ -3,7 +3,7 @@ pkgs,
 ...
 }: {
   programs.hyprlock = {
-    enable = false;
+    enable = true;
 
     package = pkgs.unstable.hyprlock;
 
@@ -23,7 +23,7 @@ pkgs,
       # BACKGROUND
       background = {
         monitor = "";
-        path = "$HOME/Pictures";
+        path = "$HOME/Pictures/pics/wallpapers/wallpapers/";
         blur_passes = 2;
         color = "$base";
       };

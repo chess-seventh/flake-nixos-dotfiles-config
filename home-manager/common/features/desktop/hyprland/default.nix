@@ -20,10 +20,12 @@
   #   inputs.hyprwm-contrib.packages.${system}.grimblast
   # ];
 
-  # xdg.portal = with pkgs; {
-  #   extraPortals = [inputs.hyprland.packages.${system}.xdg-desktop-portal-hyprland];
-  #   configPackages = [inputs.hyprland.packages.${system}.hyprland];
-  #   xdgOpenUsePortal = true;
+  # xdg.portal = {
+  #   enable = true;
+  #   configPackages = with pkgs; [
+  #     xdg-desktop-portal-wlr
+  #     xdg-desktop-portal-hyprland
+  #   ];
   # };
 
   wayland.windowManager.hyprland = {

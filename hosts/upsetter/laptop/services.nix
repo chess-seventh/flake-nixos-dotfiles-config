@@ -1,17 +1,25 @@
 {
-  config,
-  lib,
-  ...
+config,
+lib,
+...
 }: {
 
   virtualisation.docker = {
-    enable = true;
-    # daemon.settings = {
-    #   insecure-registry = "https://192.168.49.2:5000";
-    # };
+    enable = false;
+    daemon.settings = {
+      "default-address-pools" = [
+        { "base" = "172.27.0.0/16"; "size" = 24; }
+      ];
+      #   insecure-registry = "https://192.168.49.2:5000";
+    };
     rootless = {
-      enable = true;
+      enable = false;
       setSocketVariable = true;
+      daemon.settings = {
+        "default-address-pools" = [
+          { "base" = "172.27.0.0/16"; "size" = 24; }
+        ];
+      };
     };
   };
 

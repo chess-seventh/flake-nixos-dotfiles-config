@@ -12,8 +12,8 @@ config,
     devenv
     diffsitter # Better diff
     distrobox
-    docker
-    docker-compose
+    # docker
+    # docker-compose
     gcc
     gnumake
     jdk

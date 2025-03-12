@@ -4,9 +4,9 @@
   ...
 }: {
   virtualisation.docker = {
-    enable = true;
+    enable = false;
     rootless = {
-      enable = true;
+      enable = false;
       setSocketVariable = true;
       extraOptions = "--insecure-registry https://192.168.49.2:5000";
     };

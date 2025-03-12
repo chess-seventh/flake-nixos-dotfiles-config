@@ -5,20 +5,25 @@ lib,
 }: {
 
   virtualisation.docker = {
-    enable = false;
+    enable = true;
     daemon.settings = {
-      "default-address-pools" = [
-        { "base" = "172.27.0.0/16"; "size" = 24; }
+      userland-proxy = false;
+      default-address-pool = [
+        { "base" = "172.30.0.0/16"; "size" = 24; }
+        { "base" = "172.31.0.0/16"; "size" = 24; }
       ];
       #   insecure-registry = "https://192.168.49.2:5000";
     };
     rootless = {
-      enable = false;
+      enable = true;
       setSocketVariable = true;
       daemon.settings = {
-        "default-address-pools" = [
-          { "base" = "172.27.0.0/16"; "size" = 24; }
+        userland-proxy = false;
+        default-address-pool = [
+          { "base" = "172.30.0.0/16"; "size" = 24; }
+          { "base" = "172.31.0.0/16"; "size" = 24; }
         ];
+        #   insecure-registry = "https://192.168.49.2:5000";
       };
     };
   };

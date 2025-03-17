@@ -54,17 +54,11 @@ config,
     zathura
     zoom-us
 
-
     unstable.ferdium
-
-    # Video editing
-    kdenlive
-    openshot-qt
-    shotcut
-    flowblade
 
     ## work
     teams-for-linux
+    vscode
   ];
 }
 

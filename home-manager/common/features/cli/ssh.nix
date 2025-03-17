@@ -9,12 +9,32 @@ in {
   programs.ssh = {
     enable = true;
     matchBlocks = {
+      # "gitlab.com:signicat" = {
       "work" = {
         hostname = "gitlab.com";
         user = "git";
         identityFile = "/home/seventh/.ssh/id_ecdsa";
       };
-
+      "sesam-rct" = {
+        hostname = "10.55.5.250";
+        user = "user";
+        identityFile = "/home/seventh/.ssh/id_ecdsa";
+      };
+      "sesam-prod" = {
+        hostname = "10.55.6.250";
+        user = "user";
+        identityFile = "/home/seventh/.ssh/id_ecdsa";
+      };
+      "sesam-rct2" = {
+        hostname = "10.55.16.250";
+        user = "user";
+        identityFile = "/home/seventh/.ssh/id_ecdsa";
+      };
+      "sesam-dev" = {
+        hostname = "10.55.26.250";
+        user = "user";
+        identityFile = "/home/seventh/.ssh/id_ecdsa";
+      };
     };
     # matchBlocks = {
     #   net = {

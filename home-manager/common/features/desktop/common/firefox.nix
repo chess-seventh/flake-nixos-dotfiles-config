@@ -9,6 +9,7 @@ in {
   # programs.browserpass.enable = true;
   programs.firefox = {
     enable = true;
+    # package = pkgs.unstable.firefox;
   };
 
   home = {

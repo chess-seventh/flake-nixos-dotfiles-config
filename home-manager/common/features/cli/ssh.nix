@@ -35,6 +35,41 @@ in {
         user = "user";
         identityFile = "/home/seventh/.ssh/id_ecdsa";
       };
+      "aws-live" = {
+        hostname = "10.4.185.97";
+        user = "frapiv";
+        identityFile = "/home/seventh/.ssh/id_ecdsa";
+      };
+      "az-carrefour" = {
+        hostname = "100.124.17.144";
+        user = "frapiv";
+        identityFile = "/home/seventh/.ssh/id_ecdsa";
+      };
+      "aws-lince" = {
+        hostname = "18.200.244.186";
+        user = "frapiv";
+        identityFile = "/home/seventh/.ssh/id_ecdsa";
+      };
+      "dev-staging" = {
+        hostname = "52.209.4.175";
+        user = "frapiv";
+        identityFile = "/home/seventh/.ssh/id_ecdsa";
+      };
+      "az-santander" = {
+        hostname = "10.34.8.241";
+        user = "frapiv";
+        identityFile = "/home/seventh/.ssh/id_ecdsa";
+      };
+      "az-m1" = {
+        hostname = "10.241.0.5";
+        user = "frapiv";
+        identityFile = "/home/seventh/.ssh/id_ecdsa";
+      };
+      "todoencloud" = {
+        hostname = "10.226.2.18";
+        user = "frapiv";
+        identityFile = "/home/seventh/.ssh/id_ecdsa";
+      };
     };
     # matchBlocks = {
     #   net = {
